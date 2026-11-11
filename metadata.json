@@ -1,0 +1,6 @@
+{
+  "name": "TypeShala - Free Hindi & English Typing Tutor",
+  "description": "Learn and master Hindi (InScript, Remington Gail, Phonetic) and English touch typing with interactive keyboards, lessons, and speed tests.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

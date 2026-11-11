@@ -1,0 +1,336 @@
+export interface TestParagraph {
+  id: string;
+  language: 'english' | 'hindi';
+  difficulty: 'easy' | 'medium' | 'hard';
+  title: string;
+  source: string;
+  category?: string;
+  wordCount?: number;
+  text: string;
+}
+
+export const TEST_PARAGRAPHS: TestParagraph[] = [
+  // ==========================================
+  // ENGLISH - EASY (Simple Words, Daily Life, Nature)
+  // ==========================================
+  {
+    id: 'test-eng-easy',
+    language: 'english',
+    difficulty: 'easy',
+    title: 'The Forest Journey',
+    source: 'General Story',
+    category: 'Nature',
+    wordCount: 42,
+    text: 'A quiet morning in the green woods brings calm and peace. The sun rises over tall trees while gentle birds sing sweet songs. Walking along the narrow path gives fresh energy for the busy day ahead. Clean air and soft winds refresh the mind.',
+  },
+  {
+    id: 'test-eng-easy-2',
+    language: 'english',
+    difficulty: 'easy',
+    title: 'Morning Habits for Health',
+    source: 'Daily Life',
+    category: 'Health',
+    wordCount: 52,
+    text: 'Waking up early gives you extra time to plan your day. Drinking a warm glass of water and doing light stretches keeps the body active. Eating fresh fruits and whole grains provides clean energy. When you take care of your body every morning, you feel positive and ready for all challenges.',
+  },
+  {
+    id: 'test-eng-easy-3',
+    language: 'english',
+    difficulty: 'easy',
+    title: 'The Joy of Reading Books',
+    source: 'Education',
+    category: 'Learning',
+    wordCount: 50,
+    text: 'Books open magical doors to new worlds and bright ideas. When you read a good story, you learn about faraway places and fascinating people. Reading every day improves your vocabulary, sharpens memory, and helps you speak with greater confidence. A quiet corner and a book can make any afternoon delightful.',
+  },
+  {
+    id: 'test-eng-easy-4',
+    language: 'english',
+    difficulty: 'easy',
+    title: 'A Sunny Day at the Riverside',
+    source: 'Travel & Leisure',
+    category: 'Outdoors',
+    wordCount: 51,
+    text: 'Clear blue water flowed gently past smooth river stones under the warm golden sun. Children laughed as colorful paper boats sailed downstream with the calm current. Families rested under large banyan trees sharing sweet apples and cool lemonade. Nature always reminds us to slow down and enjoy simple moments together.',
+  },
+  {
+    id: 'test-eng-easy-5',
+    language: 'english',
+    difficulty: 'easy',
+    title: 'The Helpful Little Village Market',
+    source: 'Community Life',
+    category: 'Society',
+    wordCount: 49,
+    text: 'Every Saturday morning the village square fills with friendly farmers and bright stalls. Baskets of red tomatoes, yellow mangoes, and leafy spinach line the stone walkway. Neighbors stop to greet each other with warm smiles. Supporting local growers keeps our neighborhood strong and brings wholesome fresh food to every home.',
+  },
+
+  // ==========================================
+  // ENGLISH - MEDIUM (Technology, Environment, Workplace, Teamwork)
+  // ==========================================
+  {
+    id: 'test-eng-med',
+    language: 'english',
+    difficulty: 'medium',
+    title: 'Digital Technology in Modern Life',
+    source: 'Tech Overview',
+    category: 'Technology',
+    wordCount: 41,
+    text: 'Modern computers and smart devices have transformed human collaboration across continents. Developing fast typing skills enables professionals to communicate thoughts with effortless speed. Accuracy and consistency build confidence in writing code, composing emails, and drafting critical business documents.',
+  },
+  {
+    id: 'test-eng-med-2',
+    language: 'english',
+    difficulty: 'medium',
+    title: 'Renewable Clean Energy for Tomorrow',
+    source: 'Environmental Science',
+    category: 'Environment',
+    wordCount: 55,
+    text: 'Solar panels and wind turbines are rapidly changing how societies generate power across the globe. By capturing abundant sunlight and ocean breezes, nations reduce carbon emissions while safeguarding public health. Investing in sustainable infrastructure creates long-term employment, promotes scientific innovation, and protects precious ecosystems for the well-being of future generations on our planet.',
+  },
+  {
+    id: 'test-eng-med-3',
+    language: 'english',
+    difficulty: 'medium',
+    title: 'The Architecture of Teamwork and Sports',
+    source: 'Leadership & Sports',
+    category: 'Sports',
+    wordCount: 57,
+    text: 'Great athletic teams succeed not merely through individual talent, but through synchronized communication and collective discipline. When players understand their designated roles and support teammates during demanding moments, morale remains high. Practicing perseverance under pressure teaches athletes lifelong resilience that translates smoothly into academic goals, professional endeavors, and meaningful community leadership.',
+  },
+  {
+    id: 'test-eng-med-4',
+    language: 'english',
+    difficulty: 'medium',
+    title: 'Space Missions and Lunar Exploration',
+    source: 'Science & Aerospace',
+    category: 'Science',
+    wordCount: 56,
+    text: 'Modern lunar orbiters and robotic rovers continue to uncover water ice reservoirs beneath shadowed polar craters. Scientists analyze planetary soil samples to reconstruct the turbulent history of our solar system. International collaboration among aerospace agencies accelerates deep space exploration, paving the way for permanent human research habitats and interplanetary travel toward distant worlds.',
+  },
+  {
+    id: 'test-eng-med-5',
+    language: 'english',
+    difficulty: 'medium',
+    title: 'Professional Communication in the Digital Age',
+    source: 'Workplace Skills',
+    category: 'Career',
+    wordCount: 54,
+    text: 'Clear and concise writing is an essential skill in contemporary corporate environments. Whether composing an urgent client briefing or collaborating within distributed engineering teams, clarity prevents expensive misunderstandings. Mastering touch typing allows professionals to articulate analytical insights promptly without breaking cognitive momentum during intense strategy discussions and operational deadlines.',
+  },
+
+  // ==========================================
+  // ENGLISH - HARD (SSC CHSL/CGL, Legal, Macroeconomics, Civil Services)
+  // ==========================================
+  {
+    id: 'test-eng-hard',
+    language: 'english',
+    difficulty: 'hard',
+    title: 'Public Administration & Civil Services Standard',
+    source: 'SSC Benchmark Passage',
+    category: 'Government Exam',
+    wordCount: 47,
+    text: 'Effective governance requires transparent administrative procedures and prompt citizen service delivery across regional departments. Timely documentation and official correspondence depend largely on the proficiency of staff in computer operations and data entry. Regular typing assessments ensure that candidates meet rigorous benchmarks of precision, endurance, and operational dexterity.',
+  },
+  {
+    id: 'test-eng-hard-2',
+    language: 'english',
+    difficulty: 'hard',
+    title: 'Constitutional Jurisprudence and the Rule of Law',
+    source: 'High Court & Judicial Clerk Exam',
+    category: 'Legal',
+    wordCount: 56,
+    text: 'The fundamental doctrine of constitutionalism guarantees that legislative enactments and executive decrees remain strictly subservient to the paramount principles of natural justice. In safeguarding civic liberties against bureaucratic encroachment, appellate courts scrutinize procedural propriety; hence, verbatim record-keeping, expeditious transcription, and error-free judicial documentation constitute indispensable prerequisites for preserving the integrity of legal proceedings.',
+  },
+  {
+    id: 'test-eng-hard-3',
+    language: 'english',
+    difficulty: 'hard',
+    title: 'Fiscal Policy, Inflation, and Macroeconomic Stability',
+    source: 'Financial & Economic Review',
+    category: 'Economics',
+    wordCount: 58,
+    text: 'Calibrating quantitative monetary tightening alongside targeted fiscal stimulus requires delicate synchronization among central monetary authorities. Persistent inflationary pressures often depress aggregate demand, necessitating prudent sovereign debt management and countercyclical capital expenditures. Transparent economic disclosures, published through standardized statistical bulletins, empower institutional investors and market participants to formulate rational forecasts amid volatile international commodity pricing cycles.',
+  },
+  {
+    id: 'test-eng-hard-4',
+    language: 'english',
+    difficulty: 'hard',
+    title: 'Bioethics and Genetic Engineering Protocols',
+    source: 'Scientific Research Journal',
+    category: 'Bioethics',
+    wordCount: 57,
+    text: 'Emerging CRISPR-Cas9 genome editing technologies present unprecedented therapeutic breakthroughs for treating congenital disorders; simultaneously, they provoke profound ethical dilemmas concerning germline modifications. Rigorous peer-reviewed clinical methodologies and international regulatory oversight are imperative to prevent premature commercial exploitation. Interdisciplinary bioethics committees must balance scientific therapeutic ambition against precautionary responsibilities, ensuring that biotechnological advancements respect human dignity.',
+  },
+  {
+    id: 'test-eng-hard-5',
+    language: 'english',
+    difficulty: 'hard',
+    title: 'Parliamentary Secretariat and Legislative Procedures',
+    source: 'Secretariat Assistant Benchmark',
+    category: 'Government Exam',
+    wordCount: 58,
+    text: 'Deliberative parliamentary committees perform indispensable oversight functions by scrutinizing statutory budgetary appropriations and evaluating ministerial implementation reports. During intense legislative sessions, official verbatim reporters and stenographic officers must record parliamentary debates with uncompromising accuracy, capturing technical terminology, procedural motions, and statutory amendments under demanding deadlines without compromising lexical fidelity or administrative confidentiality.',
+  },
+
+  // ==========================================
+  // HINDI - EASY (सरल - सामान्य जीवन, प्रकृति, समय, स्वास्थ्य)
+  // ==========================================
+  {
+    id: 'test-hin-easy',
+    language: 'hindi',
+    difficulty: 'easy',
+    title: 'प्रकृति और हमारा जीवन',
+    source: 'सामान्य गद्य',
+    category: 'प्रकृति',
+    wordCount: 39,
+    text: 'प्रातःकाल का सुहावना समय मन को नई ऊर्जा और शांति प्रदान करता है। हरे-भरे पेड़ और चहकते पक्षी वातावरण को आनंदित कर देते हैं। प्रकृति की गोद में बिताया गया कुछ समय स्वास्थ्य के लिए बहुत लाभकारी सिद्ध होता है। हमें सदा अपने पर्यावरण की रक्षा करनी चाहिए।',
+  },
+  {
+    id: 'test-hin-easy-2',
+    language: 'hindi',
+    difficulty: 'easy',
+    title: 'प्रातःकाल का सुखद भ्रमण',
+    source: 'स्वास्थ्य एवं जीवन',
+    category: 'स्वास्थ्य',
+    wordCount: 44,
+    text: 'सुबह जल्दी उठकर खुली हवा में टहलना स्वास्थ्य के लिए सबसे उत्तम उपाय है। भोर की ठंडी हवा शरीर को नई चेतना देती है और आलस्य को दूर भगाती है। नियमित रूप से व्यायाम और सैर करने वाले लोग सदा निरोग और प्रसन्न रहते हैं। स्वस्थ तन में ही स्वस्थ मन का वास होता है।',
+  },
+  {
+    id: 'test-hin-easy-3',
+    language: 'hindi',
+    difficulty: 'easy',
+    title: 'समय का मूल्य और सदुपयोग',
+    source: 'नैतिक शिक्षा',
+    category: 'शिक्षा',
+    wordCount: 43,
+    text: 'समय संसार का सबसे अमूल्य धन है। जो क्षण एक बार बीत जाता है, वह कभी वापस नहीं आता। बुद्धिमान व्यक्ति अपने प्रत्येक पल का सदुपयोग करते हैं और अपने कार्य समय पर पूरे करते हैं। समय की पाबंदी हमें जीवन में सफलता और मान-सम्मान दिलाती है।',
+  },
+  {
+    id: 'test-hin-easy-4',
+    language: 'hindi',
+    difficulty: 'easy',
+    title: 'पुस्तकों का महत्व और सच्ची मित्रता',
+    source: 'विद्यार्थी जगत',
+    category: 'ज्ञान',
+    wordCount: 45,
+    text: 'अच्छी पुस्तकें हमारी सबसे सच्ची और निष्ठावान मित्र होती हैं। वे हमें सही मार्ग दिखाती हैं और कठिन समय में ज्ञान का प्रकाश देती हैं। प्रतिदिन कुछ पृष्ठ पढ़ने की आदत से व्यक्ति की भाषा सुधरती है और विचार उदार बनते हैं। ज्ञान ही मानव जीवन की सबसे बड़ी पूंजी है।',
+  },
+  {
+    id: 'test-hin-easy-5',
+    language: 'hindi',
+    difficulty: 'easy',
+    title: 'पेड़-पौधे और हरियाली की देन',
+    source: 'पर्यावरण दर्शन',
+    category: 'प्रकृति',
+    wordCount: 42,
+    text: 'पेड़-पौधे हमारी धरती के अनमोल आभूषण हैं। वे हमें मीठे फल, छाया और प्राणवायु आक्सीजन देते हैं। हरियाली देखकर मन शांत होता है और तनाव मिट जाता है। हमें अपने जन्मदिन और विशेष अवसरों पर कम से कम एक पौधा अवश्य लगाना चाहिए ताकि धरा हरी-भरी रहे।',
+  },
+
+  // ==========================================
+  // HINDI - MEDIUM (मध्यम - डिजिटल भारत, संस्कृति, विज्ञान, शिक्षा)
+  // ==========================================
+  {
+    id: 'test-hin-med',
+    language: 'hindi',
+    difficulty: 'medium',
+    title: 'डिजिटल भारत और हिंदी भाषा',
+    source: 'सूचना प्रौद्योगिकी',
+    category: 'तकनीक',
+    wordCount: 50,
+    text: 'आज के समय में तकनीक का प्रसार भारत के प्रत्येक कोने में हो चुका है। इंटरनेट और मोबाइल के माध्यम से सरकारी सेवाएँ सीधे आम नागरिकों तक पहुँच रही हैं। इस डिजिटल क्रांति में हिंदी टाइपिंग का ज्ञान युवाओं के लिए रोजगार और उच्च पदों के नए द्वार खोल रहा है। निरंतर अभ्यास से गति और शुद्धता दोनों में वृद्धि होती है।',
+  },
+  {
+    id: 'test-hin-med-2',
+    language: 'hindi',
+    difficulty: 'medium',
+    title: 'भारतीय संस्कृति और अनेकता में एकता',
+    source: 'सांस्कृतिक निबंध',
+    category: 'संस्कृति',
+    wordCount: 48,
+    text: 'भारत की समृद्ध संस्कृति विश्व भर में अपनी विविधता और सहिष्णुता के लिए जानी जाती है। यहाँ विभिन्न भाषाएँ, वेशभूषा और रीति-रिवाज एक सुंदर माला के मोतियों की तरह आपस में जुड़े हुए हैं। हमारे पावन त्योहार समाज में परस्पर भाईचारे, प्रेम और सद्भावना का दिव्य संदेश देते हैं।',
+  },
+  {
+    id: 'test-hin-med-3',
+    language: 'hindi',
+    difficulty: 'medium',
+    title: 'जल संरक्षण और आने वाला कल',
+    source: 'सामाजिक जागरूकता',
+    category: 'पर्यावरण',
+    wordCount: 49,
+    text: 'जल ही जीवन का आधार है, इसके बिना किसी भी जीव की कल्पना असंभव है। आधुनिक औद्योगीकरण और अत्यधिक दोहन से भूजल स्तर निरंतर घट रहा है। वर्षा जल का संचयन करना और जल की बर्बादी रोकना हम सभी का पुनीत राष्ट्रीय कर्तव्य है। जब हम आज पानी बचाएंगे, तभी हमारी आने वाली पीढ़ी सुरक्षित रहेगी।',
+  },
+  {
+    id: 'test-hin-med-4',
+    language: 'hindi',
+    difficulty: 'medium',
+    title: 'विज्ञान और आधुनिक संचार व्यवस्था',
+    source: 'वैज्ञानिक निबंध',
+    category: 'विज्ञान',
+    wordCount: 50,
+    text: 'वैज्ञानिक अनुसंधानों ने मानव जीवन की दिशा को पूर्णतः बदल दिया है। उपग्रह संचार और तीव्रगामी इंटरनेट ने भौगोलिक दूरियों को समाप्त कर दिया है। शिक्षा, चिकित्सा और बैंकिंग के क्षेत्र में डिजिटल प्रणालियों ने पारदर्शिता और गतिशीलता बढ़ाई है। तकनीक का सकारात्मक उपयोग समाज को प्रगति के सर्वोच्च शिखर पर ले जा सकता है।',
+  },
+  {
+    id: 'test-hin-med-5',
+    language: 'hindi',
+    difficulty: 'medium',
+    title: 'युवा शक्ति और कौशल विकास',
+    source: 'राष्ट्र निर्माण',
+    category: 'रोजगार',
+    wordCount: 47,
+    text: 'भारत विश्व का सबसे युवा देश है और युवाओं की ऊर्जा ही राष्ट्र की वास्तविक शक्ति है। व्यावसायिक शिक्षा, कम्प्यूटर दक्षता और भाषा कौशल से युक्त युवा आत्मनिर्भर भारत के सपने को साकार कर रहे हैं। सही मार्गदर्शन और निरंतर स्वाध्याय से प्रत्येक विद्यार्थी अपने लक्ष्य को सरलता से प्राप्त कर सकता है।',
+  },
+
+  // ==========================================
+  // HINDI - HARD (कठिन - SSC CHSL/CGL, हाईकोर्ट, सचिवालय, विधिक मानक)
+  // ==========================================
+  {
+    id: 'test-hin-hard',
+    language: 'hindi',
+    difficulty: 'hard',
+    title: 'सचिवालय एवं न्यायालयीन टंकण मानक',
+    source: 'एसएससी एवं हाईकोर्ट परीक्षा मॉडल',
+    category: 'सरकारी परीक्षा',
+    wordCount: 54,
+    text: 'प्रशासनिक कार्यप्रणाली को सुव्यवस्थित एवं समयबद्ध रखने हेतु कुशल टंकण सहायकों की आवश्यकता सर्वोपरि है। राज्य लोक सेवा आयोग एवं केंद्रीय कर्मचारी चयन आयोग द्वारा आयोजित परीक्षाओं में न्यूनतम तीस से पैंतीस शब्द प्रति मिनट की गति निर्धारित की गई है। इसके लिए अभ्यर्थियों को इन्स्क्रिप्ट अथवा रेमिंगटन गेल कीबोर्ड पर विराम चिह्नों, संयुक्त अक्षरों और मात्राओं का विशेष अभ्यास करना चाहिए।',
+  },
+  {
+    id: 'test-hin-hard-2',
+    language: 'hindi',
+    difficulty: 'hard',
+    title: 'भारतीय संविधान एवं विधिक संस्थाओं की भूमिका',
+    source: 'उच्च न्यायालय कनिष्ठ लिपिक परीक्षा',
+    category: 'न्यायालयीन परीक्षा',
+    wordCount: 56,
+    text: 'लोकतांत्रिक शासन व्यवस्था में न्यायपालिका संविधान की सर्वोच्च संरक्षक तथा नागरिकों के मूलभूत अधिकारों की सजग प्रहरी है। न्यायिक निर्णयों एवं विधिक अभिलेखों का शुद्ध व निर्दोष टंकण अत्यंत संवेदनशील कार्य है, जिसमें अल्पविराम अथवा पूर्णविराम की सूक्ष्म त्रुटि भी अर्थ का अनर्थ कर सकती है। अतः न्यायालयीन कर्मचारियों को विधि शब्दावली एवं मानक देवनागरी लिपि के संयुक्त रूपों का पूर्ण ज्ञान होना अनिवार्य है।',
+  },
+  {
+    id: 'test-hin-hard-3',
+    language: 'hindi',
+    difficulty: 'hard',
+    title: 'प्रशासनिक सुधार, ई-गवर्नेंस एवं पारदर्शिता',
+    source: 'सचिवालय सहायक परीक्षा प्रश्नपत्र',
+    category: 'सरकारी परीक्षा',
+    wordCount: 57,
+    text: 'सुशासन की स्थापना हेतु प्रशासनिक तंत्र में पारदर्शिता, जवाबदेही तथा जनशिकायतों का त्वरित निवारण अनिवार्य शर्त है। केंद्रीय मंत्रालयों एवं राज्य सचिवालयों में पत्राचार, अधिसूचनाओं एवं मंत्रिमंडल टिप्पणियों के त्वरित प्रारूपण के लिए टंककों को तीव्र गति और उच्च शुद्धता बनाए रखनी होती है। सूचना प्रौद्योगिकी के इस युग में हिंदी टंकण की गति कार्यदक्षता को कई गुना बढ़ा देती है।',
+  },
+  {
+    id: 'test-hin-hard-4',
+    language: 'hindi',
+    difficulty: 'hard',
+    title: 'पंचायती राज व्यवस्था एवं लोकतांत्रिक विकेंद्रीकरण',
+    source: 'राज्य सिविल सेवा टंकण संवर्ग',
+    category: 'सरकारी परीक्षा',
+    wordCount: 55,
+    text: 'संविधान के तिहत्तरवें संशोधन द्वारा त्रिस्तरीय पंचायती राज व्यवस्था को संवैधानिक दर्जा प्रदान कर ग्राम स्वराज की संकल्पना को धरातल पर उतारा गया। ग्राम सभाओं के माध्यम से स्थानीय आवश्यकताओं के अनुरूप विकास योजनाओं का निर्माण व क्रियान्वयन सुनिश्चित होता है। ग्राम पंचायतों में राजस्व अभिलेखों तथा विकास कार्यों का डिजिटलीकरण ग्रामीण भारत को आत्मनिर्भर बनाने में महत्वपूर्ण भूमिका निभा रहा है।',
+  },
+  {
+    id: 'test-hin-hard-5',
+    language: 'hindi',
+    difficulty: 'hard',
+    title: 'आत्मनिर्भर अर्थव्यवस्था और राजकोषीय प्रबंधन',
+    source: 'वाणिज्य एवं उद्योग मंत्रालय संदर्भ',
+    category: 'अर्थव्यवस्था',
+    wordCount: 58,
+    text: 'वैश्विक आर्थिक अनिश्चितताओं के मध्य राजकोषीय घाटे को नियंत्रित रखते हुए विनिर्माण क्षेत्र को गति प्रदान करना किसी भी राष्ट्र के लिए चुनौतीपूर्ण होता है। सूक्ष्म, लघु एवं मध्यम उद्योगों को सुलभ ऋण तथा आधुनिक अधोसंरचना उपलब्ध कराकर घरेलू उत्पादन में अभूतपूर्व वृद्धि की जा सकती है। पारदर्शी वित्तीय नीतियों तथा संतुलित राजस्व आवंटन से देश आर्थिक सुदृढ़ता एवं सतत विकास के पथ पर अग्रसर रहता है।',
+  },
+];
