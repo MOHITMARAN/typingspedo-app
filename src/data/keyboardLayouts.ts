@@ -138,6 +138,43 @@ export function findKeyForChar(char: string, layout: 'english' | 'inscript' | 'r
   return null;
 }
 
+// Map the start of an expected text slice to the physical key and shift requirement,
+// checking multi-character Remington Gail sequences before falling back to single char lookup.
+export function findKeyForExpectedText(
+  expectedRemaining: string,
+  layout: 'english' | 'inscript' | 'remington'
+): { code: string; shift: boolean; matchedText: string } | null {
+  if (!expectedRemaining) return null;
+
+  if (layout === 'remington') {
+    let bestMatch: { code: string; shift: boolean; matchedText: string } | null = null;
+    for (const row of KEYBOARD_ROWS) {
+      for (const key of row) {
+        if (
+          key.remingtonNormal &&
+          key.remingtonNormal.length > 1 &&
+          expectedRemaining.startsWith(key.remingtonNormal) &&
+          (!bestMatch || key.remingtonNormal.length > bestMatch.matchedText.length)
+        ) {
+          bestMatch = { code: key.code, shift: false, matchedText: key.remingtonNormal };
+        }
+        if (
+          key.remingtonShift &&
+          key.remingtonShift.length > 1 &&
+          expectedRemaining.startsWith(key.remingtonShift) &&
+          (!bestMatch || key.remingtonShift.length > bestMatch.matchedText.length)
+        ) {
+          bestMatch = { code: key.code, shift: true, matchedText: key.remingtonShift };
+        }
+      }
+    }
+    if (bestMatch) return bestMatch;
+  }
+
+  const single = findKeyForChar(expectedRemaining[0], layout);
+  return single ? { ...single, matchedText: expectedRemaining[0] } : null;
+}
+
 // Convert hardware key code and shift state to Hindi InScript or Remington character
 export function getCharForPhysicalKey(
   code: string,

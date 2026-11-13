@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Language, HindiLayout, TypingStats } from '../types';
 import { KeyboardVisualizer } from './KeyboardVisualizer';
-import { findKeyForChar, getCharForPhysicalKey } from '../data/keyboardLayouts';
+import { findKeyForExpectedText, getCharForPhysicalKey } from '../data/keyboardLayouts';
+import { getTypingCursorContext, evaluateAddedInput } from '../utils/typingEvaluation';
 import { playKeyClick, playErrorBuzz, playSingleStarChime, getSavedSoundPreference, saveSoundPreference } from '../utils/sound';
 import { Volume2, VolumeX, RotateCcw, ArrowRight, CheckCircle2, Zap, Target, Star, AlertCircle, BookOpen, Sparkles, Hand } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
@@ -69,15 +70,20 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
     saveVirtualHandsPreference(next);
   };
 
+  const [composingText, setComposingText] = useState<string | null>(null);
+
   const inputRef = useRef<HTMLInputElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const activeCharRef = useRef<HTMLSpanElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const typedTextRef = useRef('');
+  const errorsRef = useRef(0);
+  const handledInKeyDownRef = useRef(false);
+  const isComposingRef = useRef(false);
+  const preCompositionTypedRef = useRef('');
 
   // Normalize target text
   const cleanTarget = targetText.trim();
-  const currentIndex = typedText.length;
-  const nextChar = cleanTarget[currentIndex] || '';
 
   // Pre-calculate character tokens grouped by word for safe line-wrapping
   const words = React.useMemo(() => {
@@ -104,43 +110,30 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
   // Natural Hindi Devanagari Word Tokens for Word Practice or Typing Test mode
   // Renders complete words with matras together (e.g. "कार", "राम", "सीता") instead of detached characters
   const isHindiWordMode = language === 'hindi' && (isTestMode || wordMode);
+  // Align all Hindi practice (including Unit 1 character drills) by space-separated tokens
+  // so an accidental Space or length mismatch in one token never cascades error sounds.
+  const useWordAlignment = language === 'hindi';
 
-  const testWords = React.useMemo(() => {
-    if (!isHindiWordMode) return [];
+  const cursorContext = React.useMemo(
+    () => getTypingCursorContext(cleanTarget, typedText, useWordAlignment),
+    [cleanTarget, typedText, useWordAlignment]
+  );
 
-    const rawTokens = cleanTarget.split(' ');
-    let charOffset = 0;
-
-    return rawTokens.map((rawWord, idx) => {
-      const startIndex = charOffset;
-      const endIndex = startIndex + rawWord.length;
-      const hasSpace = idx < rawTokens.length - 1;
-      charOffset = endIndex + (hasSpace ? 1 : 0);
-
-      return {
-        index: idx,
-        text: rawWord,
-        startIndex,
-        endIndex,
-        trailingSpace: hasSpace,
-      };
-    });
-  }, [cleanTarget, isHindiWordMode]);
+  const testWords = cursorContext.words;
 
   const typedWords = React.useMemo(() => {
-    if (!isHindiWordMode) return [];
+    if (!useWordAlignment) return [];
     return typedText.split(' ');
-  }, [typedText, isHindiWordMode]);
+  }, [typedText, useWordAlignment]);
 
-  const activeWordIndex =
-    isHindiWordMode
-      ? Math.min(typedWords.length - 1, Math.max(0, testWords.length - 1))
-      : -1;
+  const activeWordIndex = useWordAlignment ? cursorContext.activeWordIndex : -1;
+  const currentIndex = typedText.length;
+  const nextChar = cursorContext.nextExpectedChar;
 
-  // Calculate keyboard shift requirement
-  const keyInfo = nextChar
-    ? findKeyForChar(
-        nextChar,
+  // Calculate keyboard shift requirement (supporting multi-char Remington Gail tokens)
+  const keyInfo = cursorContext.expectedRemaining
+    ? findKeyForExpectedText(
+        cursorContext.expectedRemaining,
         language === 'english'
           ? 'english'
           : hindiLayout === 'remington'
@@ -167,6 +160,12 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
   // Reset engine
   const handleReset = useCallback(() => {
     if (timerRef.current) clearInterval(timerRef.current);
+    typedTextRef.current = '';
+    errorsRef.current = 0;
+    handledInKeyDownRef.current = false;
+    isComposingRef.current = false;
+    preCompositionTypedRef.current = '';
+    setComposingText(null);
     setTypedText('');
     setStartTime(null);
     setTimeElapsed(0);
@@ -251,93 +250,174 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
     focusInput();
   }, []);
 
-  // Completion check
-  useEffect(() => {
-    if (typedText.length >= cleanTarget.length && cleanTarget.length > 0 && !isCompleted) {
+  // Complete helper so final metrics are computed cleanly
+  const finalizeCompletion = useCallback(
+    (finalText: string, finalErrors: number) => {
+      if (isCompleted) return;
       setIsCompleted(true);
       if (timerRef.current) clearInterval(timerRef.current);
       setShowCelebration(true);
       if (onComplete) {
+        const finalElapsed = startTime ? Math.max(1, Math.floor((Date.now() - startTime) / 1000)) : Math.max(1, timeElapsed);
+        const mins = Math.max(finalElapsed / 60, 0.016);
+        const keystrokes = finalText.length;
+        const finalGrossWpm = Math.round((keystrokes / 5) / mins) || 0;
+        const finalNetWpm = Math.max(0, Math.round(((keystrokes - finalErrors) / 5) / mins)) || 0;
+        const finalAccuracy =
+          keystrokes > 0 ? Math.max(0, Math.round(((keystrokes - finalErrors) / keystrokes) * 100)) : 100;
+
         onComplete({
-          wpm: grossWpm,
-          netWpm,
-          accuracy,
-          errors,
-          totalKeystrokes,
-          timeElapsed: Math.max(1, timeElapsed),
+          wpm: finalGrossWpm,
+          netWpm: finalNetWpm,
+          accuracy: finalAccuracy,
+          errors: finalErrors,
+          totalKeystrokes: keystrokes,
+          timeElapsed: finalElapsed,
           completed: true,
         });
       }
-    }
-  }, [typedText, cleanTarget, isCompleted, grossWpm, netWpm, accuracy, errors, totalKeystrokes, timeElapsed, minAccuracyToPass, onComplete]);
+    },
+    [isCompleted, onComplete, startTime, timeElapsed]
+  );
 
-  // Apply an added character directly
-  const applyNextCharacter = useCallback(
-    (addedChar: string) => {
-      if (isCompleted) return;
+  // Completion check
+  useEffect(() => {
+    if (cursorContext.isTargetCompleted && cleanTarget.length > 0 && !isCompleted) {
+      finalizeCompletion(typedTextRef.current, errorsRef.current);
+    }
+  }, [cursorContext.isTargetCompleted, cleanTarget.length, isCompleted, finalizeCompletion]);
+
+  // Process newly added text against the aligned target position
+  const commitAddedText = useCallback(
+    (baseTypedText: string, addedText: string) => {
+      if (isCompleted || !addedText) return;
 
       if (!startTime) {
         setStartTime(Date.now());
       }
 
-      const expectedChar = cleanTarget[typedText.length];
-      const isSpace = addedChar === ' ';
+      const result = evaluateAddedInput({
+        cleanTarget,
+        typedText: baseTypedText,
+        addedText,
+        isWordMode: useWordAlignment,
+      });
 
-      if (addedChar === expectedChar) {
-        playKeyClick(soundEnabled, isSpace);
+      if (result.isCorrect) {
+        playKeyClick(soundEnabled, result.isSpace);
       } else {
         playErrorBuzz(soundEnabled);
-        setErrors((prev) => prev + 1);
+        if (result.errorIncrement > 0) {
+          errorsRef.current += result.errorIncrement;
+          setErrors(errorsRef.current);
+        }
       }
 
-      const nextVal = typedText + addedChar;
-      setTypedText(nextVal);
+      typedTextRef.current = result.nextTypedText;
+      setTypedText(result.nextTypedText);
       if (inputRef.current) {
-        inputRef.current.value = nextVal;
+        inputRef.current.value = result.nextTypedText;
+      }
+
+      if (result.completedAfterInput) {
+        finalizeCompletion(result.nextTypedText, errorsRef.current);
       }
     },
-    [cleanTarget, isCompleted, soundEnabled, startTime, typedText]
+    [cleanTarget, finalizeCompletion, isCompleted, soundEnabled, startTime, useWordAlignment]
   );
 
-  // Handle standard Input typing
+  // Apply an added character directly (Physical InScript/Remington or Virtual Keyboard click)
+  const applyNextCharacter = useCallback(
+    (addedChar: string) => {
+      commitAddedText(typedTextRef.current, addedChar);
+    },
+    [commitAddedText]
+  );
+
+  // Handle OS IME composition lifecycle cleanly without false error buzzes on intermediate keys
+  const handleCompositionStart = () => {
+    isComposingRef.current = true;
+    preCompositionTypedRef.current = typedTextRef.current;
+  };
+
+  const handleCompositionEnd = (e: React.CompositionEvent<HTMLInputElement>) => {
+    isComposingRef.current = false;
+    setComposingText(null);
+    if (isCompleted) return;
+
+    const val = e.currentTarget.value;
+    const base = preCompositionTypedRef.current;
+    if (val === base) return;
+
+    let commonLen = 0;
+    const minLen = Math.min(base.length, val.length);
+    while (commonLen < minLen && base[commonLen] === val[commonLen]) {
+      commonLen++;
+    }
+
+    const alignedBase = base.slice(0, commonLen);
+    const added = val.slice(commonLen);
+    if (added.length > 0) {
+      commitAddedText(alignedBase, added);
+    } else {
+      typedTextRef.current = alignedBase;
+      setTypedText(alignedBase);
+    }
+  };
+
+  // Handle standard Input typing (English, Phonetic, OS Direct, and mobile soft keyboards)
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (isCompleted) return;
 
-    if (
-      hardwareKeyEmulation &&
-      language === 'hindi' &&
-      (hindiLayout === 'inscript' || hindiLayout === 'remington')
-    ) {
+    if (handledInKeyDownRef.current) {
+      handledInKeyDownRef.current = false;
       return;
-    }
-
-    if (!startTime) {
-      setStartTime(Date.now());
     }
 
     const val = e.target.value;
 
-    if (val.length > typedText.length) {
-      const addedChar = val[val.length - 1];
-      const targetChar = cleanTarget[val.length - 1];
-      const isSpace = addedChar === ' ';
-
-      if (addedChar === targetChar) {
-        playKeyClick(soundEnabled, isSpace);
-      } else {
-        playErrorBuzz(soundEnabled);
-        setErrors((prev) => prev + 1);
-      }
-    } else {
-      // Backspace
-      playKeyClick(soundEnabled, false);
+    if (isComposingRef.current) {
+      setComposingText(val);
+      return;
     }
 
-    setTypedText(val);
+    const prev = typedTextRef.current;
+    if (val === prev) return;
+
+    if (val.length < prev.length && prev.startsWith(val)) {
+      // Backspace
+      playKeyClick(soundEnabled, false);
+      typedTextRef.current = val;
+      setTypedText(val);
+      return;
+    }
+
+    if (val.startsWith(prev)) {
+      const added = val.slice(prev.length);
+      commitAddedText(prev, added);
+      return;
+    }
+
+    // Replacement / edit diff (e.g. mobile autocorrect or IME update)
+    let commonLen = 0;
+    const minLen = Math.min(prev.length, val.length);
+    while (commonLen < minLen && prev[commonLen] === val[commonLen]) {
+      commonLen++;
+    }
+    const alignedBase = prev.slice(0, commonLen);
+    const added = val.slice(commonLen);
+    if (added.length > 0) {
+      commitAddedText(alignedBase, added);
+    } else {
+      playKeyClick(soundEnabled, false);
+      typedTextRef.current = alignedBase;
+      setTypedText(alignedBase);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     setActiveCode(e.code);
+    handledInKeyDownRef.current = false;
 
     if (isCompleted) return;
 
@@ -352,9 +432,11 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
     ) {
       if (e.key === 'Backspace') {
         e.preventDefault();
+        handledInKeyDownRef.current = true;
         playKeyClick(soundEnabled, false);
-        if (typedText.length > 0) {
-          const nextVal = typedText.slice(0, -1);
+        if (typedTextRef.current.length > 0) {
+          const nextVal = typedTextRef.current.slice(0, -1);
+          typedTextRef.current = nextVal;
           setTypedText(nextVal);
           if (inputRef.current) {
             inputRef.current.value = nextVal;
@@ -370,6 +452,7 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
       const mappedChar = getCharForPhysicalKey(e.code, e.shiftKey, hindiLayout);
       if (mappedChar) {
         e.preventDefault();
+        handledInKeyDownRef.current = true;
         applyNextCharacter(mappedChar);
       }
     }
@@ -471,8 +554,10 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
         <input
           ref={inputRef}
           type="text"
-          value={typedText}
+          value={composingText ?? typedText}
           onChange={handleInputChange}
+          onCompositionStart={handleCompositionStart}
+          onCompositionEnd={handleCompositionEnd}
           onKeyDown={handleKeyDown}
           onKeyUp={handleKeyUp}
           autoComplete="off"
@@ -577,70 +662,104 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
           ) : (
             /* Standard Drill Character Grid (Used for Lessons) */
             <div className="flex flex-wrap items-start">
-              {words.map((word, wordIdx) => (
-                <span
-                  key={wordIdx}
-                  className="inline-flex items-end flex-nowrap mr-2 sm:mr-3 my-1 sm:my-1.5 align-top"
-                >
-                  {word.chars.map(({ char, globalIndex }) => {
-                    const isPassed = globalIndex < currentIndex;
-                    const isCurrent = globalIndex === currentIndex;
-                    const typedChar = isPassed ? typedText[globalIndex] : null;
-                    const isCorrect = isPassed && typedChar === char;
+              {words.map((word, wordIdx) => {
+                const hasTrailingSpace = word.chars[word.chars.length - 1]?.char === ' ';
+                const targetCharCount = hasTrailingSpace ? word.chars.length - 1 : word.chars.length;
+                const typedWordForToken = useWordAlignment ? (typedWords[wordIdx] ?? '') : '';
 
-                    return (
-                      <span
-                        key={globalIndex}
-                        className="inline-flex flex-col items-center justify-start min-w-[0.9em] sm:min-w-[1.05em] px-[0.5px] relative"
-                      >
-                        {/* Target Character (Top) */}
-                        <span
-                          ref={isCurrent ? activeCharRef : null}
-                          className={`relative inline-block leading-none font-mono text-xl sm:text-2xl transition-colors duration-100 ${
-                            isPassed
-                              ? isCorrect
-                                ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
-                                : 'text-rose-600 dark:text-rose-400 bg-rose-100/80 dark:bg-rose-950/70 rounded px-0.5 font-bold'
-                              : isCurrent
-                              ? 'text-slate-900 dark:text-white font-bold bg-sky-100 dark:bg-sky-950/90 rounded px-1 border-b-2 border-sky-500 shadow-2xs'
-                              : 'text-slate-800 dark:text-slate-200 font-medium'
-                          } ${language === 'hindi' ? 'font-hindi text-2xl sm:text-3xl' : ''}`}
-                        >
-                          {/* High-contrast vertical blinking cursor at the next character */}
-                          {isCurrent && !isCompleted && (
-                            <span
-                              className="absolute -left-[2px] top-0 bottom-0 w-[3px] bg-slate-950 dark:bg-sky-300 rounded-full animate-cursor-blink"
-                              aria-hidden="true"
-                            />
-                          )}
-                          {char === ' ' ? '\u00A0' : char}
-                        </span>
+                return (
+                  <span
+                    key={wordIdx}
+                    className="inline-flex items-end flex-nowrap mr-2 sm:mr-3 my-1 sm:my-1.5 align-top"
+                  >
+                    {word.chars.map(({ char, globalIndex }, cIdx) => {
+                      let isPassed = false;
+                      let isCurrent = false;
+                      let typedChar: string | null = null;
+                      let isCorrect = false;
 
-                        {/* Directly Underneath Typing Progress */}
+                      if (useWordAlignment) {
+                        const isSpaceChar = hasTrailingSpace && cIdx === targetCharCount;
+                        if (wordIdx < activeWordIndex) {
+                          isPassed = true;
+                          if (isSpaceChar) {
+                            typedChar = ' ';
+                            isCorrect = typedWordForToken.length === targetCharCount;
+                          } else {
+                            typedChar = cIdx < typedWordForToken.length ? typedWordForToken[cIdx] : null;
+                            isCorrect = typedChar !== null && typedChar === char;
+                          }
+                        } else if (wordIdx === activeWordIndex) {
+                          if (isSpaceChar) {
+                            isCurrent = typedWordForToken.length >= targetCharCount;
+                          } else {
+                            isPassed = cIdx < typedWordForToken.length;
+                            isCurrent = cIdx === typedWordForToken.length;
+                            typedChar = isPassed ? typedWordForToken[cIdx] : null;
+                            isCorrect = isPassed && typedChar === char;
+                          }
+                        }
+                      } else {
+                        isPassed = globalIndex < currentIndex;
+                        isCurrent = globalIndex === currentIndex;
+                        typedChar = isPassed ? typedText[globalIndex] : null;
+                        isCorrect = isPassed && typedChar === char;
+                      }
+
+                      return (
                         <span
-                          className={`h-5 sm:h-6 flex items-center justify-center font-mono text-xs sm:text-sm font-bold leading-none mt-1 transition-all ${
-                            isPassed
-                              ? isCorrect
-                                ? 'text-emerald-600 dark:text-emerald-400'
-                                : 'text-rose-600 dark:text-rose-300 bg-rose-100 dark:bg-rose-900/60 rounded px-0.5 underline decoration-wavy decoration-rose-500'
-                              : isCurrent
-                              ? 'text-sky-500 dark:text-sky-400'
-                              : 'text-transparent select-none'
-                          }`}
+                          key={globalIndex}
+                          className="inline-flex flex-col items-center justify-start min-w-[0.9em] sm:min-w-[1.05em] px-[0.5px] relative"
                         >
-                          {isPassed ? (
-                            typedChar === ' ' ? '␣' : typedChar
-                          ) : isCurrent ? (
-                            <span className="w-2.5 sm:w-3 h-1 bg-sky-500 dark:bg-sky-400 rounded-full animate-pulse" />
-                          ) : (
-                            char === ' ' ? '\u00A0' : char
-                          )}
+                          {/* Target Character (Top) */}
+                          <span
+                            ref={isCurrent ? activeCharRef : null}
+                            className={`relative inline-block leading-none font-mono text-xl sm:text-2xl transition-colors duration-100 ${
+                              isPassed
+                                ? isCorrect
+                                  ? 'text-emerald-600 dark:text-emerald-400 font-semibold'
+                                  : 'text-rose-600 dark:text-rose-400 bg-rose-100/80 dark:bg-rose-950/70 rounded px-0.5 font-bold'
+                                : isCurrent
+                                ? 'text-slate-900 dark:text-white font-bold bg-sky-100 dark:bg-sky-950/90 rounded px-1 border-b-2 border-sky-500 shadow-2xs'
+                                : 'text-slate-800 dark:text-slate-200 font-medium'
+                            } ${language === 'hindi' ? 'font-hindi text-2xl sm:text-3xl' : ''}`}
+                          >
+                            {/* High-contrast vertical blinking cursor at the next character */}
+                            {isCurrent && !isCompleted && (
+                              <span
+                                className="absolute -left-[2px] top-0 bottom-0 w-[3px] bg-slate-950 dark:bg-sky-300 rounded-full animate-cursor-blink"
+                                aria-hidden="true"
+                              />
+                            )}
+                            {char === ' ' ? '\u00A0' : char}
+                          </span>
+
+                          {/* Directly Underneath Typing Progress */}
+                          <span
+                            className={`h-5 sm:h-6 flex items-center justify-center font-mono text-xs sm:text-sm font-bold leading-none mt-1 transition-all ${
+                              isPassed
+                                ? isCorrect
+                                  ? 'text-emerald-600 dark:text-emerald-400'
+                                  : 'text-rose-600 dark:text-rose-300 bg-rose-100 dark:bg-rose-900/60 rounded px-0.5 underline decoration-wavy decoration-rose-500'
+                                : isCurrent
+                                ? 'text-sky-500 dark:text-sky-400'
+                                : 'text-transparent select-none'
+                            }`}
+                          >
+                            {isPassed ? (
+                              typedChar === null ? '—' : typedChar === ' ' ? '␣' : typedChar
+                            ) : isCurrent ? (
+                              <span className="w-2.5 sm:w-3 h-1 bg-sky-500 dark:bg-sky-400 rounded-full animate-pulse" />
+                            ) : (
+                              char === ' ' ? '\u00A0' : char
+                            )}
+                          </span>
                         </span>
-                      </span>
-                    );
-                  })}
-                </span>
-              ))}
+                      );
+                    })}
+                  </span>
+                );
+              })}
             </div>
           )}
         </div>
@@ -715,7 +834,7 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
       {showKeyboard && (
         <KeyboardVisualizer
           layout={language === 'english' ? 'english' : hindiLayout}
-          nextExpectedChar={nextChar}
+          nextExpectedChar={keyInfo?.matchedText || nextChar}
           activePressedCode={activeCode}
           shiftRequired={keyInfo?.shift}
           highlightExpectedKey={!hideKeyboardHints}
