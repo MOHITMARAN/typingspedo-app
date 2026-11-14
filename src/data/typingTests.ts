@@ -20,8 +20,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'The Forest Journey',
     source: 'General Story',
     category: 'Nature',
-    wordCount: 42,
-    text: 'A quiet morning in the green woods brings calm and peace. The sun rises over tall trees while gentle birds sing sweet songs. Walking along the narrow path gives fresh energy for the busy day ahead. Clean air and soft winds refresh the mind.',
+    wordCount: 210,
+    text: 'A quiet morning in the green woods brings calm and peace. The sun rises over tall trees while gentle birds sing sweet songs. Walking along the narrow path gives fresh energy for the busy day ahead. Clean air and soft winds refresh the mind. Dewdrops shine like tiny pearls on wide green leaves, and a clear stream flows gently beside the mossy stones. Squirrels hop quickly from branch to branch looking for fallen nuts, while golden beams of sunlight dance across the forest floor. Every step along the soft trail helps us leave daily worries behind and listen closely to the simple rhythm of nature. Far away from loud traffic and crowded streets, time seems to slow down in a peaceful way. Small yellow flowers bloom near the roots of old oak trees, welcoming early bees that buzz happily in the warm light. Travelers who pause on the wooden bridge can watch silver fish swim slowly through the cool water below. Breathing deeply under the open canopy fills the heart with quiet joy and gratitude. When afternoon arrives and shadows grow long, walking back toward home feels light and easy, because the calm spirit of the forest stays with us throughout the entire evening and prepares us well for tomorrow.',
   },
   {
     id: 'test-eng-easy-2',
@@ -30,8 +30,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Morning Habits for Health',
     source: 'Daily Life',
     category: 'Health',
-    wordCount: 52,
-    text: 'Waking up early gives you extra time to plan your day. Drinking a warm glass of water and doing light stretches keeps the body active. Eating fresh fruits and whole grains provides clean energy. When you take care of your body every morning, you feel positive and ready for all challenges.',
+    wordCount: 216,
+    text: 'Waking up early gives you extra time to plan your day. Drinking a warm glass of water and doing light stretches keeps the body active. Eating fresh fruits and whole grains provides clean energy. When you take care of your body every morning, you feel positive and ready for all challenges. Stepping outside for a short brisk walk in the fresh morning breeze helps wake up the mind and improves steady focus. Simple breathing exercises for five minutes can reduce stress and bring a calm balance before work or school begins. Instead of rushing straight to a phone screen, spending a quiet moment writing down three clear goals keeps your routine organized and purposeful. Preparing a balanced breakfast with milk, oats, nuts, or seasonal vegetables fuels steady concentration until lunch time. Children and adults alike benefit greatly from sleeping on time at night so waking up feels natural rather than tiring. Keeping your desk tidy and placing a bottle of clean drinking water nearby encourages healthy habits throughout the afternoon as well. Good posture while sitting and taking brief breaks to rest your eyes also protect daily comfort. Small daily choices repeated with patience build lasting strength, better mood, and dependable energy that supports every study session, family responsibility, and personal milestone across the whole year.',
   },
   {
     id: 'test-eng-easy-3',
@@ -40,8 +40,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'The Joy of Reading Books',
     source: 'Education',
     category: 'Learning',
-    wordCount: 50,
-    text: 'Books open magical doors to new worlds and bright ideas. When you read a good story, you learn about faraway places and fascinating people. Reading every day improves your vocabulary, sharpens memory, and helps you speak with greater confidence. A quiet corner and a book can make any afternoon delightful.',
+    wordCount: 211,
+    text: 'Books open magical doors to new worlds and bright ideas. When you read a good story, you learn about faraway places and fascinating people. Reading every day improves your vocabulary, sharpens memory, and helps you speak with greater confidence. A quiet corner and a book can make any afternoon delightful. Libraries and home bookshelves hold treasures written by thinkers from many different times and cultures. Whether you enjoy adventure tales, true life stories, or simple science guides, every page teaches something useful and sparks fresh curiosity. Parents who read aloud with children build warm memories while planting a lifelong love for discovery. Reading slowly and thinking about each chapter trains the mind to stay patient and pay close attention in a noisy digital world. Taking brief notes about favorite lessons helps you remember key facts and share clear thoughts during class discussions or friendly conversations. Even twenty minutes of calm reading before sleep can rest the eyes from bright screens and invite peaceful dreams. Sharing thoughtful books with neighbors and classmates turns quiet reading into a cheerful community habit too. Over months and years, one book leads naturally to another, expanding knowledge, deepening kindness toward others, and giving every reader a steady companion that never runs out of wisdom or wonder.',
   },
   {
     id: 'test-eng-easy-4',
@@ -50,8 +50,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'A Sunny Day at the Riverside',
     source: 'Travel & Leisure',
     category: 'Outdoors',
-    wordCount: 51,
-    text: 'Clear blue water flowed gently past smooth river stones under the warm golden sun. Children laughed as colorful paper boats sailed downstream with the calm current. Families rested under large banyan trees sharing sweet apples and cool lemonade. Nature always reminds us to slow down and enjoy simple moments together.',
+    wordCount: 211,
+    text: 'Clear blue water flowed gently past smooth river stones under the warm golden sun. Children laughed as colorful paper boats sailed downstream with the calm current. Families rested under large banyan trees sharing sweet apples and cool lemonade. Nature always reminds us to slow down and enjoy simple moments together. Soft white clouds drifted slowly across the wide sky while dragonflies skimmed lightly above the shimmering surface near the grassy bank. Some visitors spread woven mats on the dry lawn to play board games, while older folks sat quietly on wooden benches watching the sparkling ripples. Near the shallow edge, small birds hopped across warm sandbars looking for tiny insects and fresh water. A gentle breeze carried the pleasant scent of wild grass and blooming garden flowers along the entire path. Friends clicked cheerful photos by the stone steps and promised to return during the next holiday season. Before leaving in the late afternoon, everyone carefully gathered empty bottles and food wrappers into cloth bags so the riverbank stayed spotless and inviting for future guests. Local volunteers also planted shady trees along the walking lane to keep visitors cool in summer. Watching the orange sunset reflect over the peaceful water gave everyone a warm memory to carry home safely at dusk.',
   },
   {
     id: 'test-eng-easy-5',
@@ -60,8 +60,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'The Helpful Little Village Market',
     source: 'Community Life',
     category: 'Society',
-    wordCount: 49,
-    text: 'Every Saturday morning the village square fills with friendly farmers and bright stalls. Baskets of red tomatoes, yellow mangoes, and leafy spinach line the stone walkway. Neighbors stop to greet each other with warm smiles. Supporting local growers keeps our neighborhood strong and brings wholesome fresh food to every home.',
+    wordCount: 209,
+    text: 'Every Saturday morning the village square fills with friendly farmers and bright stalls. Baskets of red tomatoes, yellow mangoes, and leafy spinach line the stone walkway. Neighbors stop to greet each other with warm smiles. Supporting local growers keeps our neighborhood strong and brings wholesome fresh food to every home. Bakers arrange trays of soft warm bread beside jars of pure golden honey and homemade pickles wrapped in neat cloth covers. Potters display clay water jugs and painted flower pots that cool naturally in the open shade. Shoppers carry woven baskets from stall to stall, checking ripe fruit and thanking hard-working vendors who arrive before sunrise to set up their goods. Children happily help their grandparents count coins and choose sweet berries for weekend meals. Around mid-morning, a local tea seller pours hot ginger tea into small earthen cups, filling the air with a comforting aroma. People exchange news about school events, upcoming rain, and garden tips while waiting their turn patiently. Music from a wooden flute adds gentle cheer as bright paper lanterns sway slowly above the clean market lane. By early afternoon the crowd slowly thins, leaving behind tidy lanes, happy hearts, and full kitchen pantries stocked with honest, fresh produce grown right nearby by caring families.',
   },
 
   // ==========================================
@@ -74,8 +74,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Digital Technology in Modern Life',
     source: 'Tech Overview',
     category: 'Technology',
-    wordCount: 41,
-    text: 'Modern computers and smart devices have transformed human collaboration across continents. Developing fast typing skills enables professionals to communicate thoughts with effortless speed. Accuracy and consistency build confidence in writing code, composing emails, and drafting critical business documents.',
+    wordCount: 207,
+    text: 'Modern computers and smart devices have transformed human collaboration across continents. Developing fast typing skills enables professionals to communicate thoughts with effortless speed. Accuracy and consistency build confidence in writing code, composing emails, and drafting critical business documents. Cloud platforms allow distributed teams to edit shared spreadsheets, review engineering designs, and resolve project milestones in real time regardless of physical distance. At the same time, rapid digital adoption requires thoughtful habits around cybersecurity, data privacy, and focused time management. Workers who master keyboard shortcuts and clean touch-typing posture experience far less wrist fatigue during long analytical sessions while maintaining steady output. Digital libraries and interactive training portals also make advanced technical skills accessible to students in small towns as well as major metropolitan centers. When software tools are paired with clear written communication, organizations avoid costly rework and serve customers with greater reliability. Continuous learning remains essential because programming languages, office suites, and online workflows evolve rapidly each year. Balanced screen habits and regular short breaks further protect mental clarity throughout demanding schedules. Yet beneath every modern platform lies a timeless human advantage: the ability to organize complex ideas clearly, verify facts carefully, and express practical solutions through accurate, fluent writing that empowers colleagues and clients alike.',
   },
   {
     id: 'test-eng-med-2',
@@ -84,8 +84,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Renewable Clean Energy for Tomorrow',
     source: 'Environmental Science',
     category: 'Environment',
-    wordCount: 55,
-    text: 'Solar panels and wind turbines are rapidly changing how societies generate power across the globe. By capturing abundant sunlight and ocean breezes, nations reduce carbon emissions while safeguarding public health. Investing in sustainable infrastructure creates long-term employment, promotes scientific innovation, and protects precious ecosystems for the well-being of future generations on our planet.',
+    wordCount: 210,
+    text: 'Solar panels and wind turbines are rapidly changing how societies generate power across the globe. By capturing abundant sunlight and ocean breezes, nations reduce carbon emissions while safeguarding public health. Investing in sustainable infrastructure creates long-term employment, promotes scientific innovation, and protects precious ecosystems for the well-being of future generations on our planet. Modern battery storage facilities now smooth out daily supply swings, storing surplus noon electricity so hospitals, schools, and transit networks remain powered well after sunset. Engineers are also upgrading national transmission grids with smart sensors that balance regional demand, prevent power losses, and integrate rooftop solar systems seamlessly. In rural agricultural regions, solar water pumps lower diesel expenses for farmers while providing dependable irrigation during dry months. Meanwhile, urban planners encourage energy-efficient buildings with natural ventilation, reflective roofs, and electric public buses that dramatically improve neighborhood air quality. Research teams continue developing recyclable turbine blades and safer solid-state batteries to make clean energy hardware even more sustainable. Transitioning away from fossil fuels requires steady public investment, clear regulatory standards, and active community participation across industries. As manufacturing scale drives equipment prices lower every decade, clean renewable power is becoming not only the most responsible environmental choice, but also the most practical economic engine for resilient growth worldwide.',
   },
   {
     id: 'test-eng-med-3',
@@ -94,8 +94,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'The Architecture of Teamwork and Sports',
     source: 'Leadership & Sports',
     category: 'Sports',
-    wordCount: 57,
-    text: 'Great athletic teams succeed not merely through individual talent, but through synchronized communication and collective discipline. When players understand their designated roles and support teammates during demanding moments, morale remains high. Practicing perseverance under pressure teaches athletes lifelong resilience that translates smoothly into academic goals, professional endeavors, and meaningful community leadership.',
+    wordCount: 200,
+    text: 'Great athletic teams succeed not merely through individual talent, but through synchronized communication and collective discipline. When players understand their designated roles and support teammates during demanding moments, morale remains high. Practicing perseverance under pressure teaches athletes lifelong resilience that translates smoothly into academic goals, professional endeavors, and meaningful community leadership. Behind every memorable championship victory lie hundreds of quiet morning drills, video review sessions, and honest feedback exchanged on the practice field. Coaches emphasize proper fundamentals, balanced nutrition, and timely recovery so players stay sharp throughout grueling tournament schedules. Even after unexpected defeats, cohesive squads analyze mistakes calmly without blaming teammates, turning setbacks into clear stepping stones for tactical improvement. Respecting opponents, following match rules, and encouraging younger squad members create a healthy sporting culture that inspires fans in the stands. Team captains also bridge strategy between coaches and players, keeping everyone focused when fatigue sets in during decisive final minutes. In modern workplaces as well, high-performing project groups mirror these exact athletic principles by sharing credit generously, stepping up when deadlines tighten, and trusting each specialist to deliver quality work. Ultimately, teamwork transforms ordinary individual effort into extraordinary shared achievement that endures long after the final whistle blows.',
   },
   {
     id: 'test-eng-med-4',
@@ -104,8 +104,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Space Missions and Lunar Exploration',
     source: 'Science & Aerospace',
     category: 'Science',
-    wordCount: 56,
-    text: 'Modern lunar orbiters and robotic rovers continue to uncover water ice reservoirs beneath shadowed polar craters. Scientists analyze planetary soil samples to reconstruct the turbulent history of our solar system. International collaboration among aerospace agencies accelerates deep space exploration, paving the way for permanent human research habitats and interplanetary travel toward distant worlds.',
+    wordCount: 204,
+    text: 'Modern lunar orbiters and robotic rovers continue to uncover water ice reservoirs beneath shadowed polar craters. Scientists analyze planetary soil samples to reconstruct the turbulent history of our solar system. International collaboration among aerospace agencies accelerates deep space exploration, paving the way for permanent human research habitats and interplanetary travel toward distant worlds. Designing spacecraft capable of surviving extreme radiation, abrasive lunar dust, and freezing two-week nights demands extraordinary precision across propulsion, materials engineering, and autonomous navigation software. Ground controllers monitor thousands of telemetry channels continuously, verifying thermal stability, solar array output, and communication links across hundreds of thousands of kilometers. Before any rocket leaves the launch pad, multidisciplinary testing teams simulate dust storms, landing shocks, and signal delays to guarantee astronaut safety and mission reliability. Beyond scientific curiosity, technologies created for orbital missions frequently yield practical breakthroughs on Earth, including compact medical imaging sensors, water purification membranes, and durable solar cells. Universities around the world now partner with national space programs to launch student satellites that monitor weather patterns, crop health, and coastal erosion in real time. Each successful launch reminds young learners that careful mathematics, patient engineering, and bold imagination can carry human knowledge far beyond the horizon of our home planet.',
   },
   {
     id: 'test-eng-med-5',
@@ -114,8 +114,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Professional Communication in the Digital Age',
     source: 'Workplace Skills',
     category: 'Career',
-    wordCount: 54,
-    text: 'Clear and concise writing is an essential skill in contemporary corporate environments. Whether composing an urgent client briefing or collaborating within distributed engineering teams, clarity prevents expensive misunderstandings. Mastering touch typing allows professionals to articulate analytical insights promptly without breaking cognitive momentum during intense strategy discussions and operational deadlines.',
+    wordCount: 201,
+    text: 'Clear and concise writing is an essential skill in contemporary corporate environments. Whether composing an urgent client briefing or collaborating within distributed engineering teams, clarity prevents expensive misunderstandings. Mastering touch typing allows professionals to articulate analytical insights promptly without breaking cognitive momentum during intense strategy discussions and operational deadlines. Structured status reports that highlight key risks, measurable progress, and next action owners help managers make timely decisions without scheduling unnecessary meetings. Equally important is choosing a respectful, constructive tone in written messages, especially when coordinating across different time zones and cultural backgrounds where facial cues are absent. Proofreading numbers, dates, and technical attachments carefully before pressing send builds lasting trust with stakeholders and preserves a company reputation for thoroughness. Young professionals who practice summarizing lengthy policy notes into crisp bulleted action items quickly stand out in administrative, legal, and technology roles alike. Maintaining organized shared folders with descriptive filenames and clear version histories also saves teams countless hours during quarterly audits or product handoffs. As digital workspaces continue to rely heavily on instant messaging, ticketing systems, and collaborative documentation, fluent written expression paired with reliable typing accuracy remains one of the highest-return career skills anyone can cultivate through steady daily practice.',
   },
 
   // ==========================================
@@ -128,8 +128,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Public Administration & Civil Services Standard',
     source: 'SSC Benchmark Passage',
     category: 'Government Exam',
-    wordCount: 47,
-    text: 'Effective governance requires transparent administrative procedures and prompt citizen service delivery across regional departments. Timely documentation and official correspondence depend largely on the proficiency of staff in computer operations and data entry. Regular typing assessments ensure that candidates meet rigorous benchmarks of precision, endurance, and operational dexterity.',
+    wordCount: 205,
+    text: 'Effective governance requires transparent administrative procedures and prompt citizen service delivery across regional departments. Timely documentation and official correspondence depend largely on the proficiency of staff in computer operations and data entry. Regular typing assessments ensure that candidates meet rigorous benchmarks of precision, endurance, and operational dexterity. In large-scale public welfare programs, accurate digitization of beneficiary registries, land revenue records, and statutory audit trails prevents clerical discrepancies and eliminates avoidable delays in grievance redressal. Administrative officers frequently oversee interdepartmental circulars, procurement tenders, and budgetary utilization statements where even minor typographical inaccuracies can distort financial liabilities or contractual obligations. Consequently, recruitment commissions conduct standardized skill evaluations under strict time constraints to verify sustained concentration without relying on visual keyboard inspection. Beyond technical speed, institutional accountability flourishes when clerks and secretariat assistants uphold meticulous record-keeping ethics, safeguard confidential citizen files, and follow standardized archival classifications. Training institutes further reinforce statutory drafting conventions, bilingual correspondence formats, and spreadsheet reconciliation so newly inducted personnel adapt rapidly to district and ministerial workloads. As e-governance portals integrate district offices with central ministries, well-trained personnel capable of rapid, error-free transcription serve as the indispensable backbone of responsive democratic administration, bridging statutory policy frameworks with reliable execution at every level of public service.',
   },
   {
     id: 'test-eng-hard-2',
@@ -138,8 +138,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Constitutional Jurisprudence and the Rule of Law',
     source: 'High Court & Judicial Clerk Exam',
     category: 'Legal',
-    wordCount: 56,
-    text: 'The fundamental doctrine of constitutionalism guarantees that legislative enactments and executive decrees remain strictly subservient to the paramount principles of natural justice. In safeguarding civic liberties against bureaucratic encroachment, appellate courts scrutinize procedural propriety; hence, verbatim record-keeping, expeditious transcription, and error-free judicial documentation constitute indispensable prerequisites for preserving the integrity of legal proceedings.',
+    wordCount: 207,
+    text: 'The fundamental doctrine of constitutionalism guarantees that legislative enactments and executive decrees remain strictly subservient to the paramount principles of natural justice. In safeguarding civic liberties against bureaucratic encroachment, appellate courts scrutinize procedural propriety; hence, verbatim record-keeping, expeditious transcription, and error-free judicial documentation constitute indispensable prerequisites for preserving the integrity of legal proceedings. During evidentiary hearings and constitutional bench arguments, judicial stenographers and court clerks transcribe complex statutory citations, precedent annotations, and witness depositions with unwavering lexical fidelity. Every comma, semicolon, and statutory section reference carries substantive interpretive weight when appellate tribunals review trial transcripts for jurisdictional errors or manifest arbitrariness. Moreover, modernizing judicial registries through searchable electronic cause lists and authenticated digital orders accelerates access to justice for indigent litigants awaiting timely adjudication. Administrative discipline within court secretariats ensures that certified copies, writ notices, and compliance affidavits are issued without procedural bottlenecks. Rigorous verification protocols between judicial assistants and bench officers also prevent typographical ambiguities in bail conditions, interim injunctions, and sentencing memoranda that directly affect personal liberty. Ultimately, the rule of law relies not solely on eloquent judicial pronouncements, but equally on the silent precision of dedicated court staff whose disciplined craftsmanship sustains transparency, predictability, and public confidence in the enduring majesty of constitutional institutions.',
   },
   {
     id: 'test-eng-hard-3',
@@ -148,8 +148,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Fiscal Policy, Inflation, and Macroeconomic Stability',
     source: 'Financial & Economic Review',
     category: 'Economics',
-    wordCount: 58,
-    text: 'Calibrating quantitative monetary tightening alongside targeted fiscal stimulus requires delicate synchronization among central monetary authorities. Persistent inflationary pressures often depress aggregate demand, necessitating prudent sovereign debt management and countercyclical capital expenditures. Transparent economic disclosures, published through standardized statistical bulletins, empower institutional investors and market participants to formulate rational forecasts amid volatile international commodity pricing cycles.',
+    wordCount: 204,
+    text: 'Calibrating quantitative monetary tightening alongside targeted fiscal stimulus requires delicate synchronization among central monetary authorities. Persistent inflationary pressures often depress aggregate demand, necessitating prudent sovereign debt management and countercyclical capital expenditures. Transparent economic disclosures, published through standardized statistical bulletins, empower institutional investors and market participants to formulate rational forecasts amid volatile international commodity pricing cycles. When supply-side bottlenecks elevate energy and logistics costs, central banks evaluate core consumer price indices alongside wage growth trajectories before adjusting benchmark policy rates. Simultaneously, finance ministries prioritize productive infrastructure outlays, automated tax administration, and targeted social safety nets to sustain inclusive employment without widening structural fiscal deficits. Multilateral financial institutions regularly stress-test commercial banking balance sheets against currency depreciation, credit concentration risks, and abrupt cross-border capital outflows. Accurate econometric reporting, consolidated treasury ledgers, and timely regulatory filings enable oversight boards to detect systemic vulnerabilities long before liquidity shortages disrupt productive enterprise. Furthermore, strengthening domestic bond markets, modernizing digital payment settlements, and diversifying export corridors cushion emerging economies against external interest rate shocks, sudden capital reversals, and geopolitical trade disruptions. Through disciplined institutional coordination, credible inflation targeting, and transparent public finance governance, resilient economies maintain price stability while fostering sustainable industrial investment, balanced regional growth, and long-term household prosperity.',
   },
   {
     id: 'test-eng-hard-4',
@@ -158,8 +158,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Bioethics and Genetic Engineering Protocols',
     source: 'Scientific Research Journal',
     category: 'Bioethics',
-    wordCount: 57,
-    text: 'Emerging CRISPR-Cas9 genome editing technologies present unprecedented therapeutic breakthroughs for treating congenital disorders; simultaneously, they provoke profound ethical dilemmas concerning germline modifications. Rigorous peer-reviewed clinical methodologies and international regulatory oversight are imperative to prevent premature commercial exploitation. Interdisciplinary bioethics committees must balance scientific therapeutic ambition against precautionary responsibilities, ensuring that biotechnological advancements respect human dignity.',
+    wordCount: 213,
+    text: 'Emerging CRISPR-Cas9 genome editing technologies present unprecedented therapeutic breakthroughs for treating congenital disorders; simultaneously, they provoke profound ethical dilemmas concerning germline modifications. Rigorous peer-reviewed clinical methodologies and international regulatory oversight are imperative to prevent premature commercial exploitation. Interdisciplinary bioethics committees must balance scientific therapeutic ambition against precautionary responsibilities, ensuring that biotechnological advancements respect human dignity. Clinical investigators conducting cellular trials maintain exhaustive laboratory documentation covering vector specificity, off-target mutation screening, and longitudinal patient safety monitoring. Informed consent protocols require clear, jargon-free disclosures so prospective participants fully comprehend irreversible biological uncertainties before enrolling in experimental regimens. Furthermore, equitable global distribution of gene therapies remains a pressing public health priority, lest transformative medical innovations remain accessible solely to affluent populations. Regulatory agencies coordinate pharmacovigilance registries, standardize biosafety containment classifications, and audit genomic data repositories against unauthorized commercial profiling. Independent ethics review boards also evaluate long-term intergenerational safeguards, requiring transparent publication of negative trial outcomes alongside positive efficacy milestones so medical consensus rests on complete empirical evidence. Strict chain-of-custody records and validated laboratory quality audits further protect clinical integrity across international research centers. By embedding ethical transparency alongside empirical rigor from early laboratory discovery through post-approval clinical surveillance, modern biomedical governance safeguards public trust while unlocking responsible, life-saving therapies for inherited pathologies once considered entirely untreatable.',
   },
   {
     id: 'test-eng-hard-5',
@@ -168,8 +168,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'Parliamentary Secretariat and Legislative Procedures',
     source: 'Secretariat Assistant Benchmark',
     category: 'Government Exam',
-    wordCount: 58,
-    text: 'Deliberative parliamentary committees perform indispensable oversight functions by scrutinizing statutory budgetary appropriations and evaluating ministerial implementation reports. During intense legislative sessions, official verbatim reporters and stenographic officers must record parliamentary debates with uncompromising accuracy, capturing technical terminology, procedural motions, and statutory amendments under demanding deadlines without compromising lexical fidelity or administrative confidentiality.',
+    wordCount: 213,
+    text: 'Deliberative parliamentary committees perform indispensable oversight functions by scrutinizing statutory budgetary appropriations and evaluating ministerial implementation reports. During intense legislative sessions, official verbatim reporters and stenographic officers must record parliamentary debates with uncompromising accuracy, capturing technical terminology, procedural motions, and statutory amendments under demanding deadlines without compromising lexical fidelity or administrative confidentiality. Committee secretariats compile comparative clauses, stakeholder memoranda, and fiscal impact notes so lawmakers can examine proposed statutes systematically prior to floor voting. Unstarred and starred parliamentary questions require rapid verification across departmental archives to ensure factual replies are tabled punctually during morning proceedings. Additionally, indexing historical legislative debates and digitized gazette notifications allows researchers, legal practitioners, and citizens to trace statutory intent accurately across decades of democratic lawmaking. Translation wings and editorial clerks further synchronize bilingual bill drafts, privilege motions, and committee recommendations so every published legislative volume adheres strictly to constitutional terminology. Automated cross-referencing tools assist archival staff in verifying amended schedules, subordinate rules, and ministerial assurances tabled across successive legislative sessions. Candidates aspiring to secretariat service must cultivate sustained typing endurance alongside mastery of formal English syntax, punctuation conventions, and parliamentary nomenclature. Through disciplined procedural stewardship and accurate archival transcription, parliamentary staff reinforce legislative accountability and preserve an authoritative historical record of national deliberation for present and future generations.',
   },
 
   // ==========================================
@@ -182,8 +182,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'प्रकृति और हमारा जीवन',
     source: 'सामान्य गद्य',
     category: 'प्रकृति',
-    wordCount: 39,
-    text: 'प्रातःकाल का सुहावना समय मन को नई ऊर्जा और शांति प्रदान करता है। हरे-भरे पेड़ और चहकते पक्षी वातावरण को आनंदित कर देते हैं। प्रकृति की गोद में बिताया गया कुछ समय स्वास्थ्य के लिए बहुत लाभकारी सिद्ध होता है। हमें सदा अपने पर्यावरण की रक्षा करनी चाहिए।',
+    wordCount: 211,
+    text: 'प्रातःकाल का सुहावना समय मन को नई ऊर्जा और शांति प्रदान करता है। हरे-भरे पेड़ और चहकते पक्षी वातावरण को आनंदित कर देते हैं। प्रकृति की गोद में बिताया गया कुछ समय स्वास्थ्य के लिए बहुत लाभकारी सिद्ध होता है। हमें सदा अपने पर्यावरण की रक्षा करनी चाहिए। सुबह की कोमल धूप जब पत्तों पर गिरती है, तो ओस की बूंदें मोतियों की तरह चमकने लगती हैं। ठंडी और ताजी हवा शरीर की थकान को दूर कर देती है तथा पूरे दिन काम करने का उत्साह जगाती है। नदियाँ, पहाड़, झरने और खुले मैदान हमारे जीवन को सुंदर और संतुलित बनाते हैं। यदि हम अपने घर के आसपास छोटे-छोटे पौधे लगाएं और उनकी नियमित देखभाल करें, तो चारों ओर हरियाली फैल सकती है। बच्चों को भी बचपन से ही पेड़-पौधों से प्रेम करना और जल बचाना सिखाया जाना चाहिए। प्लास्टिक का कम उपयोग करना तथा कूड़े को सही स्थान पर डालना प्रकृति के प्रति हमारा सच्चा सम्मान है। झीलों और नदियों को साफ रखने से जलीय जीवों को भी सुरक्षित जीवन मिलता है। जब धरती हरी-भरी और स्वच्छ रहेगी, तभी मनुष्य और सभी जीव सुखपूर्वक जीवन जी सकेंगे। प्रकृति हमें बिना किसी स्वार्थ के शुद्ध हवा, मीठा जल और अन्न देती है, इसलिए उसकी सेवा करना हम सबका पहला कर्तव्य है।',
   },
   {
     id: 'test-hin-easy-2',
@@ -192,8 +192,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'प्रातःकाल का सुखद भ्रमण',
     source: 'स्वास्थ्य एवं जीवन',
     category: 'स्वास्थ्य',
-    wordCount: 44,
-    text: 'सुबह जल्दी उठकर खुली हवा में टहलना स्वास्थ्य के लिए सबसे उत्तम उपाय है। भोर की ठंडी हवा शरीर को नई चेतना देती है और आलस्य को दूर भगाती है। नियमित रूप से व्यायाम और सैर करने वाले लोग सदा निरोग और प्रसन्न रहते हैं। स्वस्थ तन में ही स्वस्थ मन का वास होता है।',
+    wordCount: 212,
+    text: 'सुबह जल्दी उठकर खुली हवा में टहलना स्वास्थ्य के लिए सबसे उत्तम उपाय है। भोर की ठंडी हवा शरीर को नई चेतना देती है और आलस्य को दूर भगाती है। नियमित रूप से व्यायाम और सैर करने वाले लोग सदा निरोग और प्रसन्न रहते हैं। स्वस्थ तन में ही स्वस्थ मन का वास होता है। प्रातःकाल के समय सड़कों और बगीचों में शोर कम होता है, जिससे मन को गहरा सुकून मिलता है। पैदल चलने से हृदय मजबूत रहता है, पाचन शक्ति सुधरती है और शरीर की रोग प्रतिरोधक क्षमता बढ़ती है। टहलने के बाद थोड़ा योग और गहरी सांस लेने का अभ्यास करने से मानसिक तनाव भी कम हो जाता है। रात को समय पर भोजन करके जल्दी सोने की आदत डालने से सुबह उठना बहुत सरल हो जाता है। जो विद्यार्थी और कर्मचारी प्रतिदिन आधा घंटा अपने शरीर को देते हैं, उनकी एकाग्रता और कार्य क्षमता दूसरों की तुलना में अधिक अच्छी रहती है। सुबह के समय साफ पानी पीना और मौसम के अनुसार ताजे फल खाना सेहत के लिए अत्यंत उपयोगी माना जाता है। परिवार के साथ सुबह की सैर करने से आपसी प्रेम और संवाद भी बढ़ता है। अच्छी दिनचर्या अपनाकर हम दवाइयों पर निर्भर हुए बिना लंबा, सक्रिय और खुशहाल जीवन आनंद के साथ जी सकते हैं।',
   },
   {
     id: 'test-hin-easy-3',
@@ -202,8 +202,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'समय का मूल्य और सदुपयोग',
     source: 'नैतिक शिक्षा',
     category: 'शिक्षा',
-    wordCount: 43,
-    text: 'समय संसार का सबसे अमूल्य धन है। जो क्षण एक बार बीत जाता है, वह कभी वापस नहीं आता। बुद्धिमान व्यक्ति अपने प्रत्येक पल का सदुपयोग करते हैं और अपने कार्य समय पर पूरे करते हैं। समय की पाबंदी हमें जीवन में सफलता और मान-सम्मान दिलाती है।',
+    wordCount: 215,
+    text: 'समय संसार का सबसे अमूल्य धन है। जो क्षण एक बार बीत जाता है, वह कभी वापस नहीं आता। बुद्धिमान व्यक्ति अपने प्रत्येक पल का सदुपयोग करते हैं और अपने कार्य समय पर पूरे करते हैं। समय की पाबंदी हमें जीवन में सफलता और मान-सम्मान दिलाती है। जिस प्रकार नदी की धारा निरंतर आगे बढ़ती रहती है, उसी प्रकार समय भी किसी की प्रतीक्षा किए बिना चलता रहता है। आलस्य और काम को कल पर टालने की आदत व्यक्ति को अपने लक्ष्य से दूर ले जाती है। यदि विद्यार्थी प्रतिदिन एक निश्चित समय सारणी बनाकर पढ़ाई और खेल दोनों को उचित समय दें, तो परीक्षा के दिनों में घबराहट नहीं होती। इसी तरह कार्यस्थल पर भी समयबद्ध ढंग से काम करने वाले लोगों पर सभी भरोसा करते हैं। छोटे-छोटे कामों को समय पर निपटाने से मन हल्का रहता है और बड़े लक्ष्यों की ओर बढ़ने का आत्मविश्वास मिलता है। संसार के सभी महान व्यक्तियों ने समय का आदर किया और हर घंटे का सही उपयोग करके बड़े मुकाम हासिल किए। सुबह से शाम तक अपनी प्राथमिकताओं को तय करके काम करने से जीवन अधिक शांत और व्यवस्थित बनता है। हमें भी व्यर्थ की बातों में अपना कीमती समय नष्ट न करके सीखने, मेहनत करने और परिवार के साथ अच्छा समय बिताने का संकल्प लेना चाहिए।',
   },
   {
     id: 'test-hin-easy-4',
@@ -212,8 +212,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'पुस्तकों का महत्व और सच्ची मित्रता',
     source: 'विद्यार्थी जगत',
     category: 'ज्ञान',
-    wordCount: 45,
-    text: 'अच्छी पुस्तकें हमारी सबसे सच्ची और निष्ठावान मित्र होती हैं। वे हमें सही मार्ग दिखाती हैं और कठिन समय में ज्ञान का प्रकाश देती हैं। प्रतिदिन कुछ पृष्ठ पढ़ने की आदत से व्यक्ति की भाषा सुधरती है और विचार उदार बनते हैं। ज्ञान ही मानव जीवन की सबसे बड़ी पूंजी है।',
+    wordCount: 213,
+    text: 'अच्छी पुस्तकें हमारी सबसे सच्ची और निष्ठावान मित्र होती हैं। वे हमें सही मार्ग दिखाती हैं और कठिन समय में ज्ञान का प्रकाश देती हैं। प्रतिदिन कुछ पृष्ठ पढ़ने की आदत से व्यक्ति की भाषा सुधरती है और विचार उदार बनते हैं। ज्ञान ही मानव जीवन की सबसे बड़ी पूंजी है। एक अच्छी किताब हमें घर बैठे देश-विदेश की यात्रा करा सकती है और महान विचारकों के अनुभवों से परिचित कराती है। जब कभी मन उदास या भ्रमित हो, तब प्रेरणादायक कहानियाँ और जीवनियाँ हमारे भीतर नया साहस भर देती हैं। नियमित पढ़ने से शब्द भंडार बढ़ता है, लिखने की शैली निखरती है और किसी भी विषय को समझने की क्षमता तेज होती है। आज के मोबाइल युग में भी पुस्तकों का स्थान कोई नहीं ले सकता, क्योंकि कागज के पन्नों को पलटते हुए पढ़ने से आंखों और मन दोनों को शांति मिलती है। विद्यालयों और नगरों में स्थित पुस्तकालय ज्ञान के मंदिर होते हैं, जहाँ हर उम्र के पाठक अपनी रुचि की पुस्तकें पढ़ सकते हैं। माता-पिता को भी बच्चों के साथ कहानियाँ पढ़कर उनकी कल्पना शक्ति को प्रोत्साहित करना चाहिए। हमें अपने घर में भी एक छोटा सा पुस्तक कोना बनाना चाहिए और मित्रों को विशेष अवसरों पर अच्छी किताबें उपहार में देनी चाहिए ताकि ज्ञान की धारा आगे बढ़ती रहे।',
   },
   {
     id: 'test-hin-easy-5',
@@ -222,8 +222,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'पेड़-पौधे और हरियाली की देन',
     source: 'पर्यावरण दर्शन',
     category: 'प्रकृति',
-    wordCount: 42,
-    text: 'पेड़-पौधे हमारी धरती के अनमोल आभूषण हैं। वे हमें मीठे फल, छाया और प्राणवायु आक्सीजन देते हैं। हरियाली देखकर मन शांत होता है और तनाव मिट जाता है। हमें अपने जन्मदिन और विशेष अवसरों पर कम से कम एक पौधा अवश्य लगाना चाहिए ताकि धरा हरी-भरी रहे।',
+    wordCount: 218,
+    text: 'पेड़-पौधे हमारी धरती के अनमोल आभूषण हैं। वे हमें मीठे फल, छाया और प्राणवायु आक्सीजन देते हैं। हरियाली देखकर मन शांत होता है और तनाव मिट जाता है। हमें अपने जन्मदिन और विशेष अवसरों पर कम से कम एक पौधा अवश्य लगाना चाहिए ताकि धरा हरी-भरी रहे। वृक्ष न केवल पक्षियों और अनेक छोटे जीवों को आश्रय देते हैं, बल्कि वर्षा लाने और मिट्टी के कटाव को रोकने में भी बड़ी भूमिका निभाते हैं। गर्मियों की तपती दोपहर में राहगीरों को घने पेड़ों की शीतल छाया में बहुत राहत मिलती है। नीम, तुलसी, आंवला और पीपल जैसे पौधे हमारे स्वास्थ्य तथा औषधीय जरूरतों के लिए अत्यंत लाभदायक होते हैं। आज तेजी से बढ़ते शहरों और सड़कों के निर्माण के कारण हरे जंगल कम होते जा रहे हैं, जिससे गर्मी और प्रदूषण की समस्या बढ़ रही है। इस संकट से बचने का सबसे सरल और प्रभावी तरीका यही है कि हम नए पौधे लगाएं और पुराने पेड़ों की कटाई को रोकें। केवल पौधा लगा देना ही काफी नहीं है, बल्कि उसके बड़ा होने तक नियमित पानी और सुरक्षा देना भी जरूरी है। स्कूलों और मोहल्लों में सामूहिक वृक्षारोपण कार्यक्रम चलाने से बच्चों में भी प्रकृति सेवा की भावना जागती है। जब हर परिवार हरियाली बढ़ाने का संकल्प लेगा, तभी आने वाली पीढ़ियों को स्वच्छ और सुंदर धरती मिल सकेगी।',
   },
 
   // ==========================================
@@ -236,8 +236,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'डिजिटल भारत और हिंदी भाषा',
     source: 'सूचना प्रौद्योगिकी',
     category: 'तकनीक',
-    wordCount: 50,
-    text: 'आज के समय में तकनीक का प्रसार भारत के प्रत्येक कोने में हो चुका है। इंटरनेट और मोबाइल के माध्यम से सरकारी सेवाएँ सीधे आम नागरिकों तक पहुँच रही हैं। इस डिजिटल क्रांति में हिंदी टाइपिंग का ज्ञान युवाओं के लिए रोजगार और उच्च पदों के नए द्वार खोल रहा है। निरंतर अभ्यास से गति और शुद्धता दोनों में वृद्धि होती है।',
+    wordCount: 221,
+    text: 'आज के समय में तकनीक का प्रसार भारत के प्रत्येक कोने में हो चुका है। इंटरनेट और मोबाइल के माध्यम से सरकारी सेवाएँ सीधे आम नागरिकों तक पहुँच रही हैं। इस डिजिटल क्रांति में हिंदी टाइपिंग का ज्ञान युवाओं के लिए रोजगार और उच्च पदों के नए द्वार खोल रहा है। निरंतर अभ्यास से गति और शुद्धता दोनों में वृद्धि होती है। गांवों और कस्बों में भी ऑनलाइन बैंकिंग, ई-शिक्षा और डिजिटल प्रमाणपत्रों के उपयोग से लोगों के समय और धन की बड़ी बचत हो रही है। जब प्रशासनिक पोर्टल और सरकारी वेबसाइटें अपनी मातृभाषा में उपलब्ध होती हैं, तो सामान्य नागरिकों के लिए उनका उपयोग करना और भी आसान हो जाता है। यूनिकोड मानक के आने के बाद कम्प्यूटर तथा मोबाइल पर हिंदी लिखना, खोजना और दस्तावेज साझा करना बहुत सुगम बन गया है। केंद्रीय तथा राज्य स्तरीय प्रतियोगी परीक्षाओं में भी अब दक्ष हिंदी टंककों की मांग तेजी से बढ़ रही है। जो विद्यार्थी बिना कीबोर्ड देखे सभी उँगलियों से सही अभ्यास करते हैं, वे बहुत कम समय में उत्कृष्ट गति हासिल कर लेते हैं। नियमित गति परीक्षण और अशुद्धियों के सुधार से परीक्षा के समय आत्मविश्वास स्वाभाविक रूप से ऊंचा रहता है। तकनीकी दक्षता और मातृभाषा पर मजबूत पकड़ मिलकर किसी भी युवा को आधुनिक कार्यक्षेत्र में आत्मविश्वास के साथ आगे बढ़ने की अद्भुत शक्ति प्रदान करते हैं।',
   },
   {
     id: 'test-hin-med-2',
@@ -246,8 +246,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'भारतीय संस्कृति और अनेकता में एकता',
     source: 'सांस्कृतिक निबंध',
     category: 'संस्कृति',
-    wordCount: 48,
-    text: 'भारत की समृद्ध संस्कृति विश्व भर में अपनी विविधता और सहिष्णुता के लिए जानी जाती है। यहाँ विभिन्न भाषाएँ, वेशभूषा और रीति-रिवाज एक सुंदर माला के मोतियों की तरह आपस में जुड़े हुए हैं। हमारे पावन त्योहार समाज में परस्पर भाईचारे, प्रेम और सद्भावना का दिव्य संदेश देते हैं।',
+    wordCount: 217,
+    text: 'भारत की समृद्ध संस्कृति विश्व भर में अपनी विविधता और सहिष्णुता के लिए जानी जाती है। यहाँ विभिन्न भाषाएँ, वेशभूषा और रीति-रिवाज एक सुंदर माला के मोतियों की तरह आपस में जुड़े हुए हैं। हमारे पावन त्योहार समाज में परस्पर भाईचारे, प्रेम और सद्भावना का दिव्य संदेश देते हैं। उत्तर के हिमालय से लेकर दक्षिण के सागर तट तक और पूर्व की हरी पहाड़ियों से लेकर पश्चिम के सुनहरे मरुस्थल तक प्रत्येक क्षेत्र की अपनी अनूठी लोक कला, संगीत और साहित्यिक परंपरा है। अतिथि को देवता मानने की भावना, बड़ों का सम्मान और संकट के समय पड़ोसियों की सहायता करना हमारे सामाजिक जीवन की मजबूत नींव है। शास्त्रीय नृत्य, प्राचीन स्थापत्य कला, आयुर्वेद और योग विद्या ने पूरे विश्व को भारत की गौरवशाली विरासत से परिचित कराया है। समय के साथ आधुनिकता को अपनाते हुए भी भारतीय समाज ने अपनी पारिवारिक मूल्यों और मानवीय संवेदनाओं को संजोकर रखा है। विभिन्न प्रदेशों के व्यंजन, हस्तशिल्प और सांस्कृतिक मेले हमारी रचनात्मक ऊर्जा को जीवंत बनाए रखते हैं। लोकगीतों और ऐतिहासिक स्मारकों का संरक्षण करने से नई पीढ़ी अपनी जड़ों और सांस्कृतिक पहचान से जुड़ी रहती है। जब सभी नागरिक भाषा, क्षेत्र और मतभेदों से ऊपर उठकर राष्ट्र की उन्नति के लिए मिलकर प्रयास करते हैं, तब अनेकता में एकता का यह आदर्श और अधिक सशक्त होकर सामने आता है।',
   },
   {
     id: 'test-hin-med-3',
@@ -256,8 +256,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'जल संरक्षण और आने वाला कल',
     source: 'सामाजिक जागरूकता',
     category: 'पर्यावरण',
-    wordCount: 49,
-    text: 'जल ही जीवन का आधार है, इसके बिना किसी भी जीव की कल्पना असंभव है। आधुनिक औद्योगीकरण और अत्यधिक दोहन से भूजल स्तर निरंतर घट रहा है। वर्षा जल का संचयन करना और जल की बर्बादी रोकना हम सभी का पुनीत राष्ट्रीय कर्तव्य है। जब हम आज पानी बचाएंगे, तभी हमारी आने वाली पीढ़ी सुरक्षित रहेगी।',
+    wordCount: 216,
+    text: 'जल ही जीवन का आधार है, इसके बिना किसी भी जीव की कल्पना असंभव है। आधुनिक औद्योगीकरण और अत्यधिक दोहन से भूजल स्तर निरंतर घट रहा है। वर्षा जल का संचयन करना और जल की बर्बादी रोकना हम सभी का पुनीत राष्ट्रीय कर्तव्य है। जब हम आज पानी बचाएंगे, तभी हमारी आने वाली पीढ़ी सुरक्षित रहेगी। पृथ्वी का बड़ा हिस्सा पानी से ढका होने के बावजूद पीने योग्य मीठे जल की मात्रा अत्यंत सीमित है। गर्मियों के दिनों में अनेक नगरों और ग्रामीण इलाकों में पेयजल के लिए लंबी कतारें लगना इस बात का संकेत है कि हमें तुरंत सजग होना होगा। घरों की छतों पर वर्षा जल संचयन की छोटी व्यवस्था बनाकर तथा पुराने तालाबों और बावड़ियों को पुनर्जीवित करके भूजल भंडार को फिर से भरा जा सकता है। खेती में टपक सिंचाई और फव्वारा प्रणाली अपनाने से कम पानी में अधिक फसल उगाई जा सकती है। दैनिक जीवन में भी ब्रश करते समय नल बंद रखना, लीक होते पाइप की तुरंत मरम्मत कराना और कारखानों के दूषित जल को साफ करके दोबारा उपयोग में लाना छोटे किंतु बहुत असरदार कदम हैं। विद्यालयों और पंचायतों में जल संरक्षण अभियान चलाकर नागरिकों को इसकी गंभीरता समझाई जा सकती है। जल संरक्षण केवल सरकार की योजना नहीं, बल्कि हर जागरूक परिवार की जीवनशैली का हिस्सा बनना चाहिए।',
   },
   {
     id: 'test-hin-med-4',
@@ -266,8 +266,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'विज्ञान और आधुनिक संचार व्यवस्था',
     source: 'वैज्ञानिक निबंध',
     category: 'विज्ञान',
-    wordCount: 50,
-    text: 'वैज्ञानिक अनुसंधानों ने मानव जीवन की दिशा को पूर्णतः बदल दिया है। उपग्रह संचार और तीव्रगामी इंटरनेट ने भौगोलिक दूरियों को समाप्त कर दिया है। शिक्षा, चिकित्सा और बैंकिंग के क्षेत्र में डिजिटल प्रणालियों ने पारदर्शिता और गतिशीलता बढ़ाई है। तकनीक का सकारात्मक उपयोग समाज को प्रगति के सर्वोच्च शिखर पर ले जा सकता है।',
+    wordCount: 220,
+    text: 'वैज्ञानिक अनुसंधानों ने मानव जीवन की दिशा को पूर्णतः बदल दिया है। उपग्रह संचार और तीव्रगामी इंटरनेट ने भौगोलिक दूरियों को समाप्त कर दिया है। शिक्षा, चिकित्सा और बैंकिंग के क्षेत्र में डिजिटल प्रणालियों ने पारदर्शिता और गतिशीलता बढ़ाई है। तकनीक का सकारात्मक उपयोग समाज को प्रगति के सर्वोच्च शिखर पर ले जा सकता है। आज दूरदराज के क्षेत्रों में रहने वाले छात्र भी ऑनलाइन कक्षाओं के माध्यम से देश के श्रेष्ठ शिक्षकों से मार्गदर्शन प्राप्त कर सकते हैं। चिकित्सा जगत में आधुनिक जांच मशीनों, टेलीमेडिसिन और सूक्ष्म शल्य चिकित्सा ने असंख्य रोगियों को नया जीवन दिया है। मौसम पूर्वानुमान प्रणाली और आपदा चेतावनी तंत्र समय रहते चक्रवात तथा भारी वर्षा की जानकारी देकर हजारों जानें बचाने में सफल रहे हैं। अंतरिक्ष विज्ञान में भारत के वैज्ञानिकों ने कम लागत में सफल उपग्रह प्रक्षेपण और चंद्र अभियानों के माध्यम से पूरी दुनिया में अपनी प्रतिभा का लोहा मनवाया है। डिजिटल मानचित्र और तेज रेल तथा हवाई यातायात ने व्यापार तथा पर्यटन के क्षेत्र में भी अभूतपूर्व सुविधाएँ उत्पन्न की हैं। हालांकि विज्ञान की शक्ति के साथ विवेक और नैतिक जिम्मेदारी का होना भी उतना ही आवश्यक है। यदि हम डिजिटल सुरक्षा नियमों का पालन करें, भ्रामक सूचनाओं से बचें और नवीन आविष्कारों का उपयोग मानव कल्याण के लिए करें, तो विज्ञान सचमुच पृथ्वी पर स्वर्ग जैसी सुविधाएँ रच सकता है।',
   },
   {
     id: 'test-hin-med-5',
@@ -276,8 +276,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'युवा शक्ति और कौशल विकास',
     source: 'राष्ट्र निर्माण',
     category: 'रोजगार',
-    wordCount: 47,
-    text: 'भारत विश्व का सबसे युवा देश है और युवाओं की ऊर्जा ही राष्ट्र की वास्तविक शक्ति है। व्यावसायिक शिक्षा, कम्प्यूटर दक्षता और भाषा कौशल से युक्त युवा आत्मनिर्भर भारत के सपने को साकार कर रहे हैं। सही मार्गदर्शन और निरंतर स्वाध्याय से प्रत्येक विद्यार्थी अपने लक्ष्य को सरलता से प्राप्त कर सकता है।',
+    wordCount: 219,
+    text: 'भारत विश्व का सबसे युवा देश है और युवाओं की ऊर्जा ही राष्ट्र की वास्तविक शक्ति है। व्यावसायिक शिक्षा, कम्प्यूटर दक्षता और भाषा कौशल से युक्त युवा आत्मनिर्भर भारत के सपने को साकार कर रहे हैं। सही मार्गदर्शन और निरंतर स्वाध्याय से प्रत्येक विद्यार्थी अपने लक्ष्य को सरलता से प्राप्त कर सकता है। केवल किताबी डिग्रियाँ प्राप्त करना ही पर्याप्त नहीं है, बल्कि बदलते उद्योगों की मांग के अनुरूप व्यावहारिक प्रशिक्षण लेना आज की सबसे बड़ी आवश्यकता बन चुकी है। टंकण कला, डेटा प्रबंधन, सॉफ्टवेयर विकास, सौर ऊर्जा तकनीक और डिजिटल विपणन जैसे क्षेत्रों में कुशल युवाओं के लिए असीम अवसर मौजूद हैं। कई युवा अब नौकरी खोजने के बजाय अपने छोटे उद्यम और स्टार्टअप शुरू करके दूसरों को भी रोजगार प्रदान कर रहे हैं। असफलता से घबराए बिना धैर्यपूर्वक अपनी कमियों को सुधारना और समय का अनुशासित उपयोग करना हर सफल व्यक्ति की पहचान होती है। तकनीकी प्रशिक्षण केंद्र और डिजिटल अभ्यास मंच ग्रामीण तथा शहरी दोनों क्षेत्रों के विद्यार्थियों को समान अवसर उपलब्ध करा रहे हैं। माता-पिता और शिक्षकों का प्रोत्साहन युवाओं में आत्मविश्वास जगाता है, जबकि नियमित अभ्यास उनके कौशल को निखारता है। जब देश की युवा पीढ़ी स्वस्थ, शिक्षित, ईमानदार और तकनीकी रूप से सक्षम होगी, तब समाज की हर चुनौती का समाधान सहजता से निकल आएगा और राष्ट्र प्रगति के नए कीर्तिमान स्थापित करेगा।',
   },
 
   // ==========================================
@@ -290,8 +290,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'सचिवालय एवं न्यायालयीन टंकण मानक',
     source: 'एसएससी एवं हाईकोर्ट परीक्षा मॉडल',
     category: 'सरकारी परीक्षा',
-    wordCount: 54,
-    text: 'प्रशासनिक कार्यप्रणाली को सुव्यवस्थित एवं समयबद्ध रखने हेतु कुशल टंकण सहायकों की आवश्यकता सर्वोपरि है। राज्य लोक सेवा आयोग एवं केंद्रीय कर्मचारी चयन आयोग द्वारा आयोजित परीक्षाओं में न्यूनतम तीस से पैंतीस शब्द प्रति मिनट की गति निर्धारित की गई है। इसके लिए अभ्यर्थियों को इन्स्क्रिप्ट अथवा रेमिंगटन गेल कीबोर्ड पर विराम चिह्नों, संयुक्त अक्षरों और मात्राओं का विशेष अभ्यास करना चाहिए।',
+    wordCount: 220,
+    text: 'प्रशासनिक कार्यप्रणाली को सुव्यवस्थित एवं समयबद्ध रखने हेतु कुशल टंकण सहायकों की आवश्यकता सर्वोपरि है। राज्य लोक सेवा आयोग एवं केंद्रीय कर्मचारी चयन आयोग द्वारा आयोजित परीक्षाओं में न्यूनतम तीस से पैंतीस शब्द प्रति मिनट की गति निर्धारित की गई है। इसके लिए अभ्यर्थियों को इन्स्क्रिप्ट अथवा रेमिंगटन गेल कीबोर्ड पर विराम चिह्नों, संयुक्त अक्षरों और मात्राओं का विशेष अभ्यास करना चाहिए। शासकीय कार्यालयों में विभिन्न विभागों से प्राप्त प्रतिवेदनों, राजपत्र अधिसूचनाओं तथा परिपत्रों का सटीक और समय पर टंकण अत्यंत महत्वपूर्ण दायित्व होता है। किसी भी आधिकारिक पत्र में वर्तनी की अशुद्धि अथवा संख्यात्मक त्रुटि प्रशासनिक निर्णय की स्पष्टता को प्रभावित कर सकती है, इसलिए परीक्षार्थी को गति के साथ उच्चतम शुद्धता बनाए रखना अनिवार्य होता है। टंकण परीक्षा के दौरान प्रायः बैकस्पेस के सीमित अथवा नियंत्रित उपयोग तथा निर्धारित समय सीमा के भीतर संपूर्ण गद्यांश को पूर्ण करने की चुनौती रहती है। अतः प्रारंभिक अवस्था से ही होम रो, अपर रो एवं लोअर रो की प्रत्येक कुंजी पर उँगलियों का सटीक अभ्यास विकसित करना लाभकारी सिद्ध होता है। हिंदी के मानक शब्दों, हलन्त चिह्नों तथा विसर्ग के शुद्ध प्रयोग की समझ भी मूल्यांकन में अत्यंत सहायक होती है। नियमित समयबद्ध अभ्यास, कठिन संयुक्ताक्षरों की पुनरावृत्ति और शांत मानसिक एकाग्रता किसी भी अभ्यर्थी को प्रथम प्रयास में ही शासकीय टंकण कौशल परीक्षा उत्तीर्ण करने का आत्मविश्वास प्रदान करती है।',
   },
   {
     id: 'test-hin-hard-2',
@@ -300,8 +300,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'भारतीय संविधान एवं विधिक संस्थाओं की भूमिका',
     source: 'उच्च न्यायालय कनिष्ठ लिपिक परीक्षा',
     category: 'न्यायालयीन परीक्षा',
-    wordCount: 56,
-    text: 'लोकतांत्रिक शासन व्यवस्था में न्यायपालिका संविधान की सर्वोच्च संरक्षक तथा नागरिकों के मूलभूत अधिकारों की सजग प्रहरी है। न्यायिक निर्णयों एवं विधिक अभिलेखों का शुद्ध व निर्दोष टंकण अत्यंत संवेदनशील कार्य है, जिसमें अल्पविराम अथवा पूर्णविराम की सूक्ष्म त्रुटि भी अर्थ का अनर्थ कर सकती है। अतः न्यायालयीन कर्मचारियों को विधि शब्दावली एवं मानक देवनागरी लिपि के संयुक्त रूपों का पूर्ण ज्ञान होना अनिवार्य है।',
+    wordCount: 218,
+    text: 'लोकतांत्रिक शासन व्यवस्था में न्यायपालिका संविधान की सर्वोच्च संरक्षक तथा नागरिकों के मूलभूत अधिकारों की सजग प्रहरी है। न्यायिक निर्णयों एवं विधिक अभिलेखों का शुद्ध व निर्दोष टंकण अत्यंत संवेदनशील कार्य है, जिसमें अल्पविराम अथवा पूर्णविराम की सूक्ष्म त्रुटि भी अर्थ का अनर्थ कर सकती है। अतः न्यायालयीन कर्मचारियों को विधि शब्दावली एवं मानक देवनागरी लिपि के संयुक्त रूपों का पूर्ण ज्ञान होना अनिवार्य है। उच्चतम एवं उच्च न्यायालयों की दैनिक वाद सूची, साक्षियों के बयान, अंतरिम आदेश तथा अंतिम निर्णयों को निर्धारित प्रारूप में शीघ्रता से लिपिबद्ध करने में आशुलिपिकों और कनिष्ठ न्यायिक सहायकों की निर्णायक भूमिका होती है। विधिक दस्तावेजों में प्रयुक्त होने वाले पारिभाषिक शब्दों, धाराओं, उपधाराओं और तारीखों के संकलन में पूर्ण सतर्कता बरतनी पड़ती है। ई-कोर्ट परियोजना के अंतर्गत वाद अभिलेखों के डिजिटलीकरण से पक्षकारों और अधिवक्ताओं को घर बैठे मामलों की अद्यतन स्थिति तथा प्रमाणित प्रतिलिपियाँ प्राप्त करने में अभूतपूर्व सुविधा मिली है। न्यायिक प्रशासन की विश्वसनीयता इस बात पर निर्भर करती है कि प्रत्येक पत्रावली पारदर्शी, सुरक्षित और त्रुटिरहित रूप में संधारित की जाए। सटीक अनुलेखन और समयबद्ध आदेश निर्गमन से वादकारियों को त्वरित न्याय प्राप्त होने में बड़ी सहायता मिलती है। जो अभ्यर्थी विधि शब्दावली के नियमित अभ्यास के साथ इन्स्क्रिप्ट या रेमिंगटन गेल में निपुणता अर्जित करते हैं, वे न्यायालयीन सेवा में अत्यंत सम्मानजनक एवं उत्तरदायी भूमिका निभाते हैं।',
   },
   {
     id: 'test-hin-hard-3',
@@ -310,8 +310,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'प्रशासनिक सुधार, ई-गवर्नेंस एवं पारदर्शिता',
     source: 'सचिवालय सहायक परीक्षा प्रश्नपत्र',
     category: 'सरकारी परीक्षा',
-    wordCount: 57,
-    text: 'सुशासन की स्थापना हेतु प्रशासनिक तंत्र में पारदर्शिता, जवाबदेही तथा जनशिकायतों का त्वरित निवारण अनिवार्य शर्त है। केंद्रीय मंत्रालयों एवं राज्य सचिवालयों में पत्राचार, अधिसूचनाओं एवं मंत्रिमंडल टिप्पणियों के त्वरित प्रारूपण के लिए टंककों को तीव्र गति और उच्च शुद्धता बनाए रखनी होती है। सूचना प्रौद्योगिकी के इस युग में हिंदी टंकण की गति कार्यदक्षता को कई गुना बढ़ा देती है।',
+    wordCount: 221,
+    text: 'सुशासन की स्थापना हेतु प्रशासनिक तंत्र में पारदर्शिता, जवाबदेही तथा जनशिकायतों का त्वरित निवारण अनिवार्य शर्त है। केंद्रीय मंत्रालयों एवं राज्य सचिवालयों में पत्राचार, अधिसूचनाओं एवं मंत्रिमंडल टिप्पणियों के त्वरित प्रारूपण के लिए टंककों को तीव्र गति और उच्च शुद्धता बनाए रखनी होती है। सूचना प्रौद्योगिकी के इस युग में हिंदी टंकण की गति कार्यदक्षता को कई गुना बढ़ा देती है। ई-ऑफिस प्रणाली के लागू होने से भौतिक फाइलों की आवाजाही में लगने वाला अनावश्यक विलंब समाप्त हुआ है और प्रत्येक अधिकारी की टिप्पणी समय-मुहर के साथ सुरक्षित दर्ज होती है। लोक कल्याणकारी योजनाओं के प्रभावी क्रियान्वयन के लिए आंकड़ों का नियमित सत्यापन, व्यय विवरण का मिलान तथा विभागीय समीक्षा बैठकों का कार्यवृत्त तैयार करना प्रशासनिक दक्षता के प्रमुख स्तंभ हैं। सूचना का अधिकार अधिनियम ने भी सरकारी कार्यालयों में अभिलेख प्रबंधन को अधिक सुव्यवस्थित और उत्तरदायी बनाने की दिशा में महत्वपूर्ण योगदान दिया है। अंतरविभागीय समन्वय बैठकों में प्रस्तुत किए जाने वाले नीतिगत मसौदों एवं सांख्यिकीय विवरणों की शुद्धता प्रशासनिक निर्णयों की गुणवत्ता को सुदृढ़ बनाती है। जब सचिवालय सहायक एवं लिपिक वर्ग के कर्मचारी आधुनिक सॉफ्टवेयर उपकरणों तथा मानक देवनागरी टंकण में दक्ष होते हैं, तो आम नागरिकों को प्रमाणपत्र, अनुदान एवं अन्य प्रशासनिक स्वीकृतियाँ निर्धारित समय सीमा के भीतर सहजता से प्राप्त होती हैं, जिससे शासन और समाज के बीच विश्वास की डोर निरंतर मजबूत होती जाती है।',
   },
   {
     id: 'test-hin-hard-4',
@@ -320,8 +320,8 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'पंचायती राज व्यवस्था एवं लोकतांत्रिक विकेंद्रीकरण',
     source: 'राज्य सिविल सेवा टंकण संवर्ग',
     category: 'सरकारी परीक्षा',
-    wordCount: 55,
-    text: 'संविधान के तिहत्तरवें संशोधन द्वारा त्रिस्तरीय पंचायती राज व्यवस्था को संवैधानिक दर्जा प्रदान कर ग्राम स्वराज की संकल्पना को धरातल पर उतारा गया। ग्राम सभाओं के माध्यम से स्थानीय आवश्यकताओं के अनुरूप विकास योजनाओं का निर्माण व क्रियान्वयन सुनिश्चित होता है। ग्राम पंचायतों में राजस्व अभिलेखों तथा विकास कार्यों का डिजिटलीकरण ग्रामीण भारत को आत्मनिर्भर बनाने में महत्वपूर्ण भूमिका निभा रहा है।',
+    wordCount: 220,
+    text: 'संविधान के तिहत्तरवें संशोधन द्वारा त्रिस्तरीय पंचायती राज व्यवस्था को संवैधानिक दर्जा प्रदान कर ग्राम स्वराज की संकल्पना को धरातल पर उतारा गया। ग्राम सभाओं के माध्यम से स्थानीय आवश्यकताओं के अनुरूप विकास योजनाओं का निर्माण व क्रियान्वयन सुनिश्चित होता है। ग्राम पंचायतों में राजस्व अभिलेखों तथा विकास कार्यों का डिजिटलीकरण ग्रामीण भारत को आत्मनिर्भर बनाने में महत्वपूर्ण भूमिका निभा रहा है। ग्राम पंचायत, पंचायत समिति और जिला परिषद के मध्य वित्तीय संसाधनों के संतुलित आवंटन से पेयजल, स्वच्छता, ग्रामीण सड़क निर्माण, प्राथमिक विद्यालयों एवं स्वास्थ्य उपकेंद्रों का सुदृढ़ीकरण संभव हो सका है। स्थानीय स्वशासन की संस्थाओं में महिलाओं और वंचित वर्गों के लिए आरक्षित प्रतिनिधित्व ने सामाजिक सशक्तिकरण तथा सामुदायिक नेतृत्व को नई दिशा प्रदान की है। पंचायत सचिवों एवं खंड स्तरीय लिपिकों द्वारा बजट प्रस्तावों, सामाजिक अंकेक्षण प्रतिवेदनों और लाभार्थी सूचियों का पारदर्शी अभिलेखन योजनाओं में अनियमितता रोकने का सशक्त माध्यम है। डिजिटल पोर्टलों पर प्रत्येक कार्य की जियो-टैग की गई जानकारी और व्यय का विवरण सार्वजनिक रूप से उपलब्ध होने से ग्रामीण नागरिकों की सहभागिता भी बढ़ी है। राज्य वित्त आयोग की अनुशंसाओं के अनुरूप कर संग्रहण और अनुदान उपयोग का समयबद्ध लेखा-जोखा स्थानीय प्रशासन को अधिक उत्तरदायी बनाता है। इस प्रकार सशक्त स्थानीय निकाय न केवल लोकतंत्र की जड़ों को गहरा करते हैं, बल्कि समग्र राष्ट्रीय विकास को भी संतुलित एवं टिकाऊ आधार प्रदान करते हैं।',
   },
   {
     id: 'test-hin-hard-5',
@@ -330,7 +330,7 @@ export const TEST_PARAGRAPHS: TestParagraph[] = [
     title: 'आत्मनिर्भर अर्थव्यवस्था और राजकोषीय प्रबंधन',
     source: 'वाणिज्य एवं उद्योग मंत्रालय संदर्भ',
     category: 'अर्थव्यवस्था',
-    wordCount: 58,
-    text: 'वैश्विक आर्थिक अनिश्चितताओं के मध्य राजकोषीय घाटे को नियंत्रित रखते हुए विनिर्माण क्षेत्र को गति प्रदान करना किसी भी राष्ट्र के लिए चुनौतीपूर्ण होता है। सूक्ष्म, लघु एवं मध्यम उद्योगों को सुलभ ऋण तथा आधुनिक अधोसंरचना उपलब्ध कराकर घरेलू उत्पादन में अभूतपूर्व वृद्धि की जा सकती है। पारदर्शी वित्तीय नीतियों तथा संतुलित राजस्व आवंटन से देश आर्थिक सुदृढ़ता एवं सतत विकास के पथ पर अग्रसर रहता है।',
+    wordCount: 220,
+    text: 'वैश्विक आर्थिक अनिश्चितताओं के मध्य राजकोषीय घाटे को नियंत्रित रखते हुए विनिर्माण क्षेत्र को गति प्रदान करना किसी भी राष्ट्र के लिए चुनौतीपूर्ण होता है। सूक्ष्म, लघु एवं मध्यम उद्योगों को सुलभ ऋण तथा आधुनिक अधोसंरचना उपलब्ध कराकर घरेलू उत्पादन में अभूतपूर्व वृद्धि की जा सकती है। पारदर्शी वित्तीय नीतियों तथा संतुलित राजस्व आवंटन से देश आर्थिक सुदृढ़ता एवं सतत विकास के पथ पर अग्रसर रहता है। माल एवं सेवा कर की एकीकृत प्रणाली ने अंतरराज्यीय व्यापार की बाधाओं को कम करके आपूर्ति श्रृंखला को अधिक सुगम और कर प्रशासन को पारदर्शी बनाया है। दूसरी ओर, राष्ट्रीय राजमार्गों, बंदरगाहों, मालगाड़ी गलियारों और डिजिटल भुगतान तंत्र में किए गए पूंजीगत निवेश ने निजी क्षेत्र के उद्यमों का विश्वास बढ़ाया है। निर्यात संवर्धन, नवीकरणीय ऊर्जा उत्पादन तथा स्वदेशी तकनीकी नवाचार को प्रोत्साहन देने से विदेशी मुद्रा भंडार सुरक्षित रहता है और मुद्रास्फीति पर प्रभावी नियंत्रण संभव होता है। वित्तीय मंत्रालयों एवं लेखा परीक्षा संस्थानों में कार्यरत कर्मचारियों को बजट दस्तावेजों, सांख्यिकीय तालिकाओं और लेखा प्रतिवेदनों का अत्यंत सावधानीपूर्वक टंकण एवं संपादन करना होता है। बैंकिंग प्रणाली की सुदृढ़ता और संतुलित ब्याज दर नीतियाँ औद्योगिक विस्तार तथा कृषि क्षेत्र की उत्पादकता को निरंतर संबल प्रदान करती हैं। अनुशासित राजकोषीय प्रबंधन और उत्पादक निवेश के समन्वय से ही दीर्घकालिक आर्थिक स्थिरता, व्यापक रोजगार सृजन तथा सर्वसमावेशी समृद्धि का लक्ष्य प्राप्त किया जा सकता है।',
   },
 ];

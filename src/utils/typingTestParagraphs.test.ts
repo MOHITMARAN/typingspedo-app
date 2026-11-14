@@ -49,11 +49,26 @@ test('Typing Test Paragraphs Library Validation', async (t) => {
     }
   });
 
+  await t.test('All English and Hindi paragraphs contain 200 to 250 words with accurate wordCount', () => {
+    for (const p of TEST_PARAGRAPHS) {
+      const words = p.text.trim().split(/\s+/);
+      assert.ok(
+        words.length >= 200 && words.length <= 250,
+        `Paragraph "${p.id}" should have 200-250 words, got ${words.length}`
+      );
+      assert.strictEqual(
+        p.wordCount,
+        words.length,
+        `Paragraph "${p.id}" declared wordCount (${p.wordCount}) must match actual word count (${words.length})`
+      );
+    }
+  });
+
   await t.test('English paragraphs contain valid words and proper sentence structure', () => {
     const englishParas = TEST_PARAGRAPHS.filter((p) => p.language === 'english');
     for (const p of englishParas) {
       const words = p.text.split(/\s+/);
-      assert.ok(words.length >= 30, `English paragraph "${p.title}" should have >= 30 words`);
+      assert.ok(words.length >= 200, `English paragraph "${p.title}" should have >= 200 words`);
       assert.ok(p.text.includes('.'), `English paragraph "${p.title}" should end with punctuation`);
     }
   });
