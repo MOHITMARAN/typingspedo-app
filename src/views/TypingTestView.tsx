@@ -3,9 +3,11 @@ import { TEST_PARAGRAPHS, TestParagraph } from '../data/typingTests';
 import { Language, HindiLayout, TypingStats, UserProgress, TestResult } from '../types';
 import { TypingEngine } from '../components/TypingEngine';
 import { recordTestResult } from '../utils/storage';
-import { Award, Timer, Target, Zap, RotateCcw, CheckCircle, BarChart3, ShieldCheck, Shuffle, FileText } from 'lucide-react';
+import { Award, Timer, Target, RotateCcw, BarChart3, ShieldCheck, Shuffle, FileText, Star } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { playKeyClick, getSavedSoundPreference } from '../utils/sound';
+import { CelebrationModal } from '../components/CelebrationModal';
+import { calculateStarRating } from '../utils/typingEvaluation';
 
 interface TypingTestViewProps {
   userProgress: UserProgress;
@@ -24,6 +26,7 @@ export const TypingTestView: React.FC<TypingTestViewProps> = ({
   const [selectedParagraphId, setSelectedParagraphId] = useState<string>('test-eng-med');
   const [testState, setTestState] = useState<'idle' | 'running' | 'finished'>('idle');
   const [lastResult, setLastResult] = useState<TestResult | null>(null);
+  const [showResultModal, setShowResultModal] = useState(false);
 
   const handleSelectHindiLayout = (layout: HindiLayout) => {
     setSelectedHindiLayout(layout);
@@ -99,8 +102,10 @@ export const TypingTestView: React.FC<TypingTestViewProps> = ({
   };
 
   const handleStartTest = () => {
+    setShowResultModal(false);
     setTestState('running');
     setLastResult(null);
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const handleTestComplete = (stats: TypingStats) => {
@@ -124,6 +129,8 @@ export const TypingTestView: React.FC<TypingTestViewProps> = ({
 
     setLastResult(result);
     setTestState('finished');
+    setShowResultModal(true);
+    window.scrollTo({ top: 0, behavior: 'auto' });
     const updated = recordTestResult(result);
     onUpdateProgress(updated);
   };
@@ -150,7 +157,7 @@ export const TypingTestView: React.FC<TypingTestViewProps> = ({
       </div>
 
       {/* Test Setup Controls */}
-      {testState !== 'running' && (
+      {testState === 'idle' && (
         <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xs space-y-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {/* Language */}
@@ -442,9 +449,26 @@ export const TypingTestView: React.FC<TypingTestViewProps> = ({
               <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
                 Official Scorecard
               </span>
-              <h2 className="text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
-                Assessment Results
-              </h2>
+              <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 mt-0.5">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
+                  Assessment Results
+                </h2>
+                <div
+                  className="flex items-center gap-0.5"
+                  title={`${calculateStarRating(lastResult.accuracy)} out of 5 stars`}
+                >
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star
+                      key={s}
+                      className={`w-4 h-4 ${
+                        s <= calculateStarRating(lastResult.accuracy)
+                          ? 'text-amber-400 fill-amber-400'
+                          : 'text-slate-300 dark:text-slate-600'
+                      }`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
 
             {/* Qualifying Status Badge */}
@@ -576,6 +600,29 @@ export const TypingTestView: React.FC<TypingTestViewProps> = ({
             </table>
           </div>
         </div>
+      )}
+      {/* Immediate Completion Results Modal with Star Rating */}
+      {lastResult && (
+        <CelebrationModal
+          isOpen={showResultModal}
+          onClose={() => setShowResultModal(false)}
+          title={
+            isQualifying
+              ? 'Exam Qualifying Grade!'
+              : lastResult.accuracy >= 90
+              ? 'Great Test Performance!'
+              : 'Typing Test Completed!'
+          }
+          subtitle={`${selectedLanguage === 'english' ? 'English' : 'Hindi'} (${durationSeconds}s) · ${activeParagraph.title} · Gross Speed: ${lastResult.wpm} WPM`}
+          wpm={lastResult.netWpm}
+          accuracy={lastResult.accuracy}
+          errors={lastResult.errors}
+          stars={calculateStarRating(lastResult.accuracy)}
+          soundEnabled={getSavedSoundPreference()}
+          onRetry={handleStartTest}
+          retryButtonLabel="Retake Test"
+          closeButtonLabel="View Scorecard"
+        />
       )}
     </div>
   );

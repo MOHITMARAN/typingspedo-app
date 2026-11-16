@@ -18,6 +18,8 @@ interface CelebrationModalProps {
   nextButtonLabel?: string;
   onNextLesson?: () => void;
   onRetry?: () => void;
+  retryButtonLabel?: string;
+  closeButtonLabel?: string;
 }
 
 export const CelebrationModal: React.FC<CelebrationModalProps> = ({
@@ -34,6 +36,8 @@ export const CelebrationModal: React.FC<CelebrationModalProps> = ({
   nextButtonLabel,
   onNextLesson,
   onRetry,
+  retryButtonLabel = 'Practice Again',
+  closeButtonLabel = 'Continue',
 }) => {
   const { currentTheme } = useTheme();
 
@@ -233,7 +237,7 @@ export const CelebrationModal: React.FC<CelebrationModalProps> = ({
                 className="w-full sm:w-1/2 py-2.5 px-4 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold text-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span>Practice Again</span>
+                <span>{retryButtonLabel}</span>
               </button>
             )}
 
@@ -255,7 +259,7 @@ export const CelebrationModal: React.FC<CelebrationModalProps> = ({
                 className="w-full sm:w-1/2 py-2.5 px-4 rounded-xl text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-md transition-all active:scale-[0.98] cursor-pointer"
                 style={{ backgroundColor: currentTheme.primaryColor }}
               >
-                <span>Continue</span>
+                <span>{closeButtonLabel}</span>
                 <CheckCircle2 className="w-3.5 h-3.5" />
               </button>
             )}

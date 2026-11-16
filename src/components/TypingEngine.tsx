@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Language, HindiLayout, TypingStats } from '../types';
 import { KeyboardVisualizer } from './KeyboardVisualizer';
 import { findKeyForExpectedText, getCharForPhysicalKey } from '../data/keyboardLayouts';
-import { getTypingCursorContext, evaluateAddedInput } from '../utils/typingEvaluation';
+import { getTypingCursorContext, evaluateAddedInput, calculateStarRating } from '../utils/typingEvaluation';
 import { playKeyClick, playErrorBuzz, playSingleStarChime, getSavedSoundPreference, saveSoundPreference } from '../utils/sound';
 import { Volume2, VolumeX, RotateCcw, ArrowRight, CheckCircle2, Zap, Target, Star, AlertCircle, BookOpen, Sparkles, Hand } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
@@ -219,14 +219,24 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
         if (timeLimit && elapsed >= timeLimit) {
           setIsCompleted(true);
           if (timerRef.current) clearInterval(timerRef.current);
-          setShowCelebration(true);
+          if (!isTestMode) {
+            setShowCelebration(true);
+          }
           if (onComplete) {
+            const keystrokes = typedTextRef.current.length;
+            const finalErrs = errorsRef.current;
+            const mins = Math.max(elapsed / 60, 0.016);
+            const finalGross = Math.round((keystrokes / 5) / mins) || 0;
+            const finalNet = Math.max(0, Math.round(((keystrokes - finalErrs) / 5) / mins)) || 0;
+            const finalAcc =
+              keystrokes > 0 ? Math.max(0, Math.round(((keystrokes - finalErrs) / keystrokes) * 100)) : 100;
+
             onComplete({
-              wpm: grossWpm,
-              netWpm,
-              accuracy,
-              errors,
-              totalKeystrokes,
+              wpm: finalGross,
+              netWpm: finalNet,
+              accuracy: finalAcc,
+              errors: finalErrs,
+              totalKeystrokes: keystrokes,
               timeElapsed: elapsed,
               completed: true,
             });
@@ -237,7 +247,7 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [startTime, isCompleted, timeLimit, grossWpm, netWpm, accuracy, errors, totalKeystrokes, minAccuracyToPass, onComplete]);
+  }, [startTime, isCompleted, timeLimit, isTestMode, onComplete]);
 
   // Focus input automatically without triggering viewport scroll
   const focusInput = () => {
@@ -256,7 +266,9 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
       if (isCompleted) return;
       setIsCompleted(true);
       if (timerRef.current) clearInterval(timerRef.current);
-      setShowCelebration(true);
+      if (!isTestMode) {
+        setShowCelebration(true);
+      }
       if (onComplete) {
         const finalElapsed = startTime ? Math.max(1, Math.floor((Date.now() - startTime) / 1000)) : Math.max(1, timeElapsed);
         const mins = Math.max(finalElapsed / 60, 0.016);
@@ -277,7 +289,7 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
         });
       }
     },
-    [isCompleted, onComplete, startTime, timeElapsed]
+    [isCompleted, isTestMode, onComplete, startTime, timeElapsed]
   );
 
   // Completion check
@@ -846,8 +858,7 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
 
       {/* Completion Dialog / Results Banner */}
       {isCompleted && (() => {
-        const starCount =
-          accuracy >= 98 ? 5 : accuracy >= 95 ? 4 : accuracy >= 90 ? 3 : accuracy >= 80 ? 2 : 1;
+        const starCount = calculateStarRating(accuracy);
         const reachedBenchmark = minAccuracyToPass ? accuracy >= minAccuracyToPass : accuracy >= 90;
 
         return (
@@ -946,24 +957,24 @@ export const TypingEngine: React.FC<TypingEngineProps> = ({
         );
       })()}
 
-      {/* Completion Celebration Modal */}
-      <CelebrationModal
-        isOpen={showCelebration}
-        onClose={() => setShowCelebration(false)}
-        title={accuracy >= 95 ? 'Outstanding Performance!' : 'Exercise Completed!'}
-        subtitle={`You completed "${title || 'the typing drill'}" with ${accuracy}% accuracy.`}
-        wpm={netWpm}
-        accuracy={accuracy}
-        errors={errors}
-        stars={
-          accuracy >= 98 ? 5 : accuracy >= 95 ? 4 : accuracy >= 90 ? 3 : accuracy >= 80 ? 2 : 1
-        }
-        soundEnabled={soundEnabled}
-        hasNextLesson={hasNextLesson}
-        nextButtonLabel={nextButtonLabel}
-        onNextLesson={onNextLesson}
-        onRetry={handleReset}
-      />
+      {/* Completion Celebration Modal (Lessons & Practice; TypingTestView manages its own modal on testState === 'finished') */}
+      {!isTestMode && (
+        <CelebrationModal
+          isOpen={showCelebration}
+          onClose={() => setShowCelebration(false)}
+          title={accuracy >= 95 ? 'Outstanding Performance!' : 'Exercise Completed!'}
+          subtitle={`You completed "${title || 'the typing drill'}" with ${accuracy}% accuracy.`}
+          wpm={netWpm}
+          accuracy={accuracy}
+          errors={errors}
+          stars={calculateStarRating(accuracy)}
+          soundEnabled={soundEnabled}
+          hasNextLesson={hasNextLesson}
+          nextButtonLabel={nextButtonLabel}
+          onNextLesson={onNextLesson}
+          onRetry={handleReset}
+        />
+      )}
     </div>
   );
 };

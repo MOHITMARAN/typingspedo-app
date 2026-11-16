@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { evaluateAddedInput, getTypingCursorContext } from './typingEvaluation';
+import { evaluateAddedInput, getTypingCursorContext, calculateStarRating } from './typingEvaluation';
 import { findKeyForExpectedText } from '../data/keyboardLayouts';
 
 test('Hindi Word Mode: typing accurately after a shorter mistyped word plays right sound and stays aligned', () => {
@@ -205,5 +205,18 @@ test('OS IME multi-character commit with trailing space evaluates cleanly word-b
   const ctx = getTypingCursorContext(target, imeCommit.nextTypedText, true);
   assert.equal(ctx.activeWordIndex, 1);
   assert.equal(ctx.activeTargetWord, 'के');
+});
+
+test('calculateStarRating returns 1-5 stars accurately across thresholds', () => {
+  assert.equal(calculateStarRating(100), 5);
+  assert.equal(calculateStarRating(98), 5);
+  assert.equal(calculateStarRating(97), 4);
+  assert.equal(calculateStarRating(95), 4);
+  assert.equal(calculateStarRating(94), 3);
+  assert.equal(calculateStarRating(90), 3);
+  assert.equal(calculateStarRating(89), 2);
+  assert.equal(calculateStarRating(80), 2);
+  assert.equal(calculateStarRating(79), 1);
+  assert.equal(calculateStarRating(0), 1);
 });
 

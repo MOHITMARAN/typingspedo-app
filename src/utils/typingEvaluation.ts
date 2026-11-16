@@ -257,3 +257,15 @@ export function evaluateAddedInput({
     completedAfterInput: nextCtx.isTargetCompleted,
   };
 }
+
+/**
+ * Calculates 1-5 star rating from typing accuracy percentage.
+ */
+export function calculateStarRating(accuracy: number): number {
+  if (accuracy >= 98) return 5;
+  if (accuracy >= 95) return 4;
+  if (accuracy >= 90) return 3;
+  if (accuracy >= 80) return 2;
+  return 1;
+}
+
